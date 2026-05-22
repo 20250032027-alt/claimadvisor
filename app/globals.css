@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0B1F3A;
+  --navy-light: #12305A;
+  --navy-dark: #071526;
+  --gold: #C8973A;
+  --gold-light: #E2B460;
+  --gold-pale: #F5E8D0;
+  --white: #FFFFFF;
+  --gray-50: #F8F9FB;
+  --gray-100: #EEF0F4;
+  --gray-300: #BCC2CC;
+  --gray-500: #6B7585;
+  --gray-700: #374151;
+  --green: #1A6B3C;
+  --green-light: #E6F4ED;
+  --red: #B91C1C;
+  --red-light: #FEE2E2;
+  --amber: #B45309;
+  --amber-light: #FEF3C7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--gray-700);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  color: var(--navy);
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.bg-navy { background-color: var(--navy); }
+.bg-navy-light { background-color: var(--navy-light); }
+.bg-gold { background-color: var(--gold); }
+.text-navy { color: var(--navy); }
+.text-gold { color: var(--gold); }
+.border-gold { border-color: var(--gold); }
+
+.progress-bar {
+  height: 4px;
+  background: var(--gray-100);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold), var(--gold-light));
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.quiz-card {
+  background: white;
+  border-radius: 12px;
+  border: 1px solid var(--gray-100);
+  box-shadow: 0 4px 24px rgba(11,31,58,0.08);
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--navy-dark);
+  font-weight: 600;
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.1s;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--navy);
+  font-weight: 500;
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--navy);
+  cursor: pointer;
+  transition: background 0.2s;
+  display: inline-block;
+  text-align: center;
+}
+
+.btn-secondary:hover {
+  background: var(--gray-50);
+}
+
+.option-btn {
+  width: 100%;
+  text-align: left;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--gray-100);
+  background: white;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  color: var(--gray-700);
+}
+
+.option-btn:hover {
+  border-color: var(--gold);
+  background: var(--gold-pale);
+}
+
+.option-btn.selected {
+  border-color: var(--navy);
+  background: #EBF0F8;
+  color: var(--navy);
+  font-weight: 500;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--gray-500);
+}
+
+.result-strong {
+  background: var(--green-light);
+  border-left: 4px solid var(--green);
+  color: var(--green);
+}
+
+.result-moderate {
+  background: var(--amber-light);
+  border-left: 4px solid var(--amber);
+  color: var(--amber);
+}
+
+.result-unlikely {
+  background: var(--red-light);
+  border-left: 4px solid var(--red);
+  color: var(--red);
+}
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--gray-100);
+  margin: 3rem 0;
+}
+
+.ad-unit {
+  background: var(--gray-50);
+  border: 1px dashed var(--gray-300);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: var(--gray-300);
+  font-family: monospace;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 0;
+  font-weight: 600;
+  color: var(--navy);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item[open] summary { border-bottom-color: transparent; }
+.faq-item p { padding: 0.75rem 0 1rem; color: var(--gray-500); line-height: 1.7; }
