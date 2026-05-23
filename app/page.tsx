@@ -19,13 +19,17 @@ const tools = [
     accent: "#0B3D91",
     accentBg: "rgba(11,61,145,0.07)",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <rect x="3" y="11" width="22" height="11" rx="3" stroke="#0B3D91" strokeWidth="1.8"/>
-        <path d="M7 11V9a2 2 0 012-2h10a2 2 0 012 2v2" stroke="#0B3D91" strokeWidth="1.8"/>
-        <circle cx="9" cy="22" r="2.5" stroke="#0B3D91" strokeWidth="1.6"/>
-        <circle cx="19" cy="22" r="2.5" stroke="#0B3D91" strokeWidth="1.6"/>
-        <path d="M3 16h5M20 16h5" stroke="#0B3D91" strokeWidth="1.6" strokeLinecap="round"/>
-      </svg>
+      <img
+        src="/car.png"
+        alt=""
+        aria-hidden="true"
+        width={28}
+        height={28}
+        style={{
+          filter: "brightness(0) saturate(100%) invert(17%) sepia(72%) saturate(700%) hue-rotate(200deg) brightness(95%)",
+          objectFit: "contain",
+        }}
+      />
     ),
   },
   {
@@ -136,6 +140,9 @@ export default function Home() {
               How It Works
             </Link>
           </div>
+          <p className="mt-6 text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
+            Used by thousands of US residents to understand their legal options before speaking with an attorney.
+          </p>
         </div>
       </section>
 
@@ -209,6 +216,24 @@ export default function Home() {
               <div className="text-xs leading-snug" style={{ color: "rgba(255,255,255,0.55)" }}>
                 {s.label}
               </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Item 3: Credibility markers */}
+        <div
+          className="max-w-4xl mx-auto px-5 pt-8 flex flex-wrap justify-center gap-x-8 gap-y-2"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.06)", marginTop: "2.5rem" }}
+        >
+          {[
+            { val: "No sign-up required", sub: "to use any tool" },
+            { val: "No data sold", sub: "ever, to anyone" },
+            { val: "Real legal formulas", sub: "same math attorneys use" },
+            { val: "All 50 states covered", sub: "state-specific where it matters" },
+          ].map((item) => (
+            <div key={item.val} className="text-center">
+              <div className="text-sm font-semibold" style={{ color: "var(--gold-light)" }}>{item.val}</div>
+              <div className="text-xs" style={{ color: "rgba(255,255,255,0.38)" }}>{item.sub}</div>
             </div>
           ))}
         </div>

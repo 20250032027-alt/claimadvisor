@@ -2,6 +2,7 @@
 import { useState } from "react";
 import ProgressBar from "@/components/ProgressBar";
 import DisclaimerBox from "@/components/DisclaimerBox";
+import EmailCapture from "@/components/EmailCapture";
 import Link from "next/link";
 
 type Answers = {
@@ -111,6 +112,39 @@ export default function CarAccidentQuiz() {
 
         <div className="mb-6">
           <DisclaimerBox />
+        </div>
+
+        {/* Item 1: Lawyer threshold message */}
+        {highEst >= 10000 && (
+          <div
+            className="rounded-xl p-4 mb-6 text-sm leading-relaxed"
+            style={{ background: "rgba(11,31,58,0.04)", border: "1.5px solid var(--navy)", color: "var(--navy)" }}
+          >
+            <strong>At this estimate, getting an attorney is almost certainly worth it.</strong>{" "}
+            Personal injury attorneys take car accident cases on contingency — no upfront cost.
+            Studies of injury claims consistently show represented claimants recover 3 to 4 times
+            more on average, even after the attorney's fee. A free consultation takes 20 minutes
+            and tells you whether you have a case worth pursuing.
+          </div>
+        )}
+        {highEst < 10000 && highEst > 0 && (
+          <div
+            className="rounded-xl p-4 mb-6 text-sm leading-relaxed"
+            style={{ background: "var(--off-white)", border: "1px solid var(--gray-100)", color: "var(--gray-600)" }}
+          >
+            Your estimate is on the lower end. For smaller claims, some people negotiate directly
+            with the insurer. That said, a free attorney consultation costs you nothing and can
+            tell you if there's more value in your case than the formula shows.
+          </div>
+        )}
+
+        {/* Item 4: Email capture */}
+        <div className="mb-6">
+          <EmailCapture
+            toolName="Car Accident Settlement Estimator"
+            estimateLabel={`${formatCurrency(Math.max(lowEst, 1000))} to ${formatCurrency(Math.max(highEst, 2000))}`}
+            estimateValue={`Low: ${formatCurrency(Math.max(lowEst, 1000))} | High: ${formatCurrency(Math.max(highEst, 2000))} | Medical bills: ${formatCurrency(medBills)} | Lost wages: ${formatCurrency(parseFloat(answers.lostWages || "0"))} | Fault factor: ${(faultFactor * 100).toFixed(0)}%`}
+          />
         </div>
 
         <div className="flex flex-col sm:flex-row gap-3">

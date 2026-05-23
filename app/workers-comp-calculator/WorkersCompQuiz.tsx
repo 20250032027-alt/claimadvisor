@@ -2,6 +2,7 @@
 import { useState } from "react";
 import ProgressBar from "@/components/ProgressBar";
 import DisclaimerBox from "@/components/DisclaimerBox";
+import EmailCapture from "@/components/EmailCapture";
 
 type Answers = {
   injuryType: string;
@@ -107,6 +108,14 @@ export default function WorkersCompQuiz() {
         </div>
 
         <div className="mb-6"><DisclaimerBox /></div>
+
+        <div className="mb-6">
+          <EmailCapture
+            toolName="Workers Compensation Estimator"
+            estimateLabel={`${formatCurrency(weeklyBenefit)}/week | ${formatCurrency(totalClaim)} total`}
+            estimateValue={`State: ${state} | Weekly wage: ${formatCurrency(wage)} | Weekly benefit: ${formatCurrency(weeklyBenefit)} | Weeks off: ${weeks} | Total claim: ${formatCurrency(totalClaim)}`}
+          />
+        </div>
 
         <div className="flex flex-col sm:flex-row gap-3">
           <a

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import ProgressBar from "@/components/ProgressBar";
 import DisclaimerBox from "@/components/DisclaimerBox";
+import EmailCapture from "@/components/EmailCapture";
 
 type Answers = {
   exposureType: string;
@@ -97,6 +98,32 @@ export default function MesotheliomaQuiz() {
         </div>
 
         <div className="mb-6"><DisclaimerBox /></div>
+
+        {/* Item 2: What actually happens when you call */}
+        <div
+          className="rounded-xl p-5 mb-6 text-sm leading-relaxed"
+          style={{ background: "var(--off-white)", border: "1px solid var(--gray-100)" }}
+        >
+          <div className="font-semibold mb-2" style={{ color: "var(--navy)", fontFamily: "inherit" }}>
+            What a free consultation actually looks like
+          </div>
+          <p style={{ color: "var(--gray-600)" }}>
+            You call or fill out a short form. An attorney or intake specialist asks about the
+            person's work history, the diagnosis, and when symptoms started. The whole call is
+            usually 15 to 20 minutes. They tell you whether they think a claim is viable.
+            There is no obligation, no contract to sign, and no cost. If they take the case,
+            they work on contingency, meaning they only get paid if you receive compensation.
+          </p>
+        </div>
+
+        {/* Item 4: Email capture */}
+        <div className="mb-6">
+          <EmailCapture
+            toolName="Mesothelioma Eligibility Checker"
+            estimateLabel={resultData.label}
+            estimateValue={`Result: ${resultData.label} | Exposure: ${answers.exposureType} | Years: ${answers.yearsExposure} | Diagnosis: ${answers.diagnosis} | Age: ${answers.age}`}
+          />
+        </div>
 
         <div className="flex flex-col sm:flex-row gap-3">
           <a
