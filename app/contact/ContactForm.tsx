@@ -68,8 +68,8 @@ export default function ContactForm() {
     );
   }
 
-  const inputClass = "w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 transition-colors";
-  const inputStyle = { borderColor: "var(--gray-100)", fontFamily: "DM Sans, sans-serif", color: "var(--gray-700)" };
+  const inputClass = "input-field";
+  const inputStyle = {};
 
   return (
     <div className="quiz-card p-8">
@@ -84,7 +84,7 @@ export default function ContactForm() {
               required type="text" value={form.name}
               onChange={(e) => update("name", e.target.value)}
               placeholder="Jane Smith"
-              className={inputClass} style={inputStyle}
+              className={inputClass}
             />
           </div>
           <div>
@@ -95,7 +95,7 @@ export default function ContactForm() {
               required type="email" value={form.email}
               onChange={(e) => update("email", e.target.value)}
               placeholder="jane@example.com"
-              className={inputClass} style={inputStyle}
+              className={inputClass}
             />
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function ContactForm() {
           <select
             value={form.subject}
             onChange={(e) => update("subject", e.target.value)}
-            className={inputClass} style={{ ...inputStyle, background: "white" }}
+            className={inputClass} style={{ background: "white" }}
           >
             <option value="">Select a subject</option>
             <option value="error">Report an error or outdated data</option>
@@ -125,7 +125,7 @@ export default function ContactForm() {
             required rows={6} value={form.message}
             onChange={(e) => update("message", e.target.value)}
             placeholder="Please describe your question or feedback in detail..."
-            className={inputClass} style={{ ...inputStyle, resize: "vertical" }}
+            className={inputClass} style={{ resize: "vertical" }}
           />
         </div>
 

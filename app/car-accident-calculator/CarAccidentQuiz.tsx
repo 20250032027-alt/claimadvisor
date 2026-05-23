@@ -295,12 +295,8 @@ function NumberStep({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           placeholder="Enter amount"
-          className="w-full rounded-lg border text-base py-3 pr-4 focus:outline-none focus:ring-2"
-          style={{
-            paddingLeft: prefix ? "2rem" : "1rem",
-            borderColor: "var(--gray-100)",
-            fontFamily: "DM Sans, sans-serif",
-          }}
+          className="input-field"
+          style={{ paddingLeft: prefix ? "2rem" : "1rem" }}
           aria-label={question}
         />
       </div>

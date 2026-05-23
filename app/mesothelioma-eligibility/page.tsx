@@ -47,7 +47,7 @@ export default function MesotheliomaPage() {
 
       <section style={{ background: "var(--navy)" }} className="py-12 px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-block text-xs font-semibold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4" style={{ background: "rgba(200,151,58,0.15)", color: "var(--gold)" }}>
+          <div className="section-label">
             Eligibility Checker
           </div>
           <h1 className="text-white font-display text-3xl md:text-4xl font-bold mb-4">
