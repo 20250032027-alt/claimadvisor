@@ -12,7 +12,7 @@ export default function Footer() {
               Claim<span style={{ color: "var(--gold)" }}>Advisor</span>
             </div>
             <p className="text-sm leading-relaxed mb-5" style={{ color: "rgba(255,255,255,0.45)", maxWidth: 280 }}>
-              Free, confidential legal claim estimation tools for US residents. Informational only — not legal advice.
+              Free, confidential legal claim estimation tools for US residents. Informational only. Not legal advice.
             </p>
             <div
               className="inline-flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-full"

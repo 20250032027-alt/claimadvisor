@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import TrustBar from "@/components/TrustBar";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — ClaimAdvisor",
+  title: "Privacy Policy, ClaimAdvisor",
   description: "ClaimAdvisor's privacy policy explaining how we collect, use, and protect your data, including our use of Google AdSense, cookies, and third-party analytics.",
 };
 

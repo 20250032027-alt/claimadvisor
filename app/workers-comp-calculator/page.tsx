@@ -5,7 +5,7 @@ import TrustBar from "@/components/TrustBar";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Workers Compensation Calculator — How Much Will I Receive?",
+  title: "Workers Compensation Calculator, How Much Will I Receive?",
   description: "Calculate your weekly workers comp benefit and total claim value. Based on your state's published formula, your average weekly wage, and your time off work. Free, 2 minutes.",
 };
 
@@ -21,12 +21,12 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "How long can I collect workers compensation benefits?",
-      acceptedAnswer: { "@type": "Answer", text: "Temporary Total Disability pays while you cannot work at all. Most states allow it for 104 weeks, some up to 500. Once your doctor releases you to work — even modified duty — temporary benefits typically stop or reduce. If you have a lasting impairment, you may qualify for Permanent Partial or Permanent Total Disability benefits, which can last for years or for life depending on the state and the severity." }
+      acceptedAnswer: { "@type": "Answer", text: "Temporary Total Disability pays while you cannot work at all. Most states allow it for 104 weeks, some up to 500. Once your doctor releases you to work (even modified duty), temporary benefits typically stop or reduce. If you have a lasting impairment, you may qualify for Permanent Partial or Permanent Total Disability benefits, which can last for years or for life depending on the state and the severity." }
     },
     {
       "@type": "Question",
       name: "Does workers comp cover all my medical bills?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes — 100 percent, with no deductibles or copays, for treatment that is reasonable, necessary, and related to your work injury. That covers emergency care, surgery, hospitalization, physical therapy, prescriptions, and most durable medical equipment. Your employer's insurer controls which doctors you can see in most states, at least initially." }
+      acceptedAnswer: { "@type": "Answer", text: "Yes, 100 percent of reasonable treatment with no deductibles or copays, for treatment that is reasonable, necessary, and related to your work injury. That includes emergency care, surgery, hospitalization, physical therapy, prescriptions, and most durable medical equipment. Your employer's insurer controls which doctors you can see in most states, at least initially." }
     },
     {
       "@type": "Question",
@@ -36,7 +36,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "What do I do if my workers comp claim is denied?",
-      acceptedAnswer: { "@type": "Answer", text: "Appeal it. Every state has a formal appeals process, usually starting with a request for reconsideration or a hearing before a workers compensation judge. Deadlines are short — typically 30 to 90 days from the denial notice. A workers comp attorney can file the appeal for you at no upfront cost since they work on contingency." }
+      acceptedAnswer: { "@type": "Answer", text: "Appeal it. Every state has a formal appeals process, usually starting with a request for reconsideration or a hearing before a workers compensation judge. Deadlines are short, typically 30 to 90 days from the denial notice. A workers comp attorney can file the appeal for you at no upfront cost since they work on contingency." }
     },
   ],
 };
@@ -54,7 +54,7 @@ export default function WorkersCompPage() {
           </h1>
           <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
             Enter your state, average weekly wage, and time off work to see your estimated
-            weekly benefit and total claim value — based on your state's actual formula.
+            weekly benefit and total claim value, based on your state's actual formula.
           </p>
         </div>
       </section>
@@ -80,7 +80,7 @@ export default function WorkersCompPage() {
 
         <h2 className="text-2xl font-bold mb-5">How Workers Compensation Benefits Are Calculated</h2>
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
-          Workers compensation is a no-fault system — you don't have to prove your employer
+          Workers compensation is a no-fault system. You don't have to prove your employer
           was negligent, only that the injury happened at work or because of work. In exchange,
           you generally cannot sue your employer directly for the injury. The trade-off is speed
           and certainty over the larger potential recovery of a lawsuit.
@@ -100,7 +100,7 @@ export default function WorkersCompPage() {
         </p>
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
           Beyond wage replacement, workers comp covers 100 percent of your medical treatment
-          with no out-of-pocket costs — emergency care, surgery, physical therapy, medications,
+          with no out-of-pocket costs, emergency care, surgery, physical therapy, medications,
           and medical equipment. If your injury leaves a permanent impairment, a physician
           assigns a disability rating that translates directly into additional compensation
           under your state's schedule of injuries.
@@ -139,11 +139,11 @@ export default function WorkersCompPage() {
             },
             {
               q: "How long can I collect workers compensation benefits?",
-              a: "Temporary Total Disability pays while you can't work at all — typically up to 104 weeks, sometimes 500. Permanent impairment qualifies you for additional benefits based on a disability rating. Some Permanent Total Disability awards last for life.",
+              a: "Temporary Total Disability pays while you can't work at all, typically up to 104 weeks, sometimes 500. Permanent impairment qualifies you for additional benefits based on a disability rating. Some Permanent Total Disability awards last for life.",
             },
             {
               q: "Does workers comp cover all my medical bills?",
-              a: "Yes, 100 percent of reasonable and necessary treatment — no deductibles, no copays. Emergency care, surgery, physical therapy, prescriptions, and most medical equipment are all covered. Your employer's insurer typically controls which doctors you use initially.",
+              a: "Yes. 100 percent of reasonable and necessary treatment with no deductibles or copays. Emergency care, surgery, physical therapy, prescriptions, and most medical equipment are all covered. Your employer's insurer typically controls which doctors you use initially.",
             },
             {
               q: "Can my employer fire me for filing a workers comp claim?",
@@ -151,7 +151,7 @@ export default function WorkersCompPage() {
             },
             {
               q: "What do I do if my workers comp claim is denied?",
-              a: "Appeal immediately. Deadlines are usually 30 to 90 days from the denial. You have the right to a hearing before a workers compensation judge. An attorney can file the appeal at no upfront cost — they work on contingency.",
+              a: "Appeal immediately. Deadlines are usually 30 to 90 days from the denial. You have the right to a hearing before a workers compensation judge. An attorney can file the appeal at no upfront cost, they work on contingency.",
             },
           ].map((item) => (
             <details key={item.q} className="faq-item">

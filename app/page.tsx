@@ -4,7 +4,7 @@ import TrustBar from "@/components/TrustBar";
 import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
-  title: "How Much Is My Legal Claim Worth? Free Estimation Tools — ClaimAdvisor",
+  title: "How Much Is My Legal Claim Worth? Free Estimation Tools, ClaimAdvisor",
   description:
     "Find out what your car accident, workers comp, or mesothelioma claim may be worth. Free calculators built on real legal formulas. No sign-up, no phone calls.",
 };
@@ -14,7 +14,7 @@ const tools = [
     href: "/car-accident-calculator",
     tag: "Settlement Calculator",
     title: "Car Accident Settlement Estimator",
-    desc: "Got hurt in a crash that wasn't your fault? Plug in your medical bills, lost wages, and injury type to see a realistic settlement range — the same math your attorney would start with.",
+    desc: "Got hurt in a crash that wasn't your fault? Plug in your medical bills, lost wages, and injury type to see a realistic settlement range, the same math your attorney would start with.",
     time: "~2 min",
     accent: "#0B3D91",
     accentBg: "rgba(11,61,145,0.07)",
@@ -32,7 +32,7 @@ const tools = [
     href: "/workers-comp-calculator",
     tag: "Benefit Calculator",
     title: "Workers Compensation Estimator",
-    desc: "Hurt on the job? Most people don't know their state caps what they can receive — or how the two-thirds wage formula actually works. This tool shows you the number before you negotiate.",
+    desc: "Hurt on the job? Most people don't know their state caps what they can receive, or how the two-thirds wage formula actually works. This tool shows you the number before you negotiate.",
     time: "~2 min",
     accent: "#1A5C35",
     accentBg: "rgba(26,92,53,0.07)",
@@ -49,7 +49,7 @@ const tools = [
     href: "/mesothelioma-eligibility",
     tag: "Eligibility Checker",
     title: "Mesothelioma Legal Eligibility",
-    desc: "Asbestos diseases show up 20 to 50 years after exposure. If you or a family member worked in construction, shipyards, or manufacturing before 1980, there may be money available — even from companies that no longer exist.",
+    desc: "Asbestos diseases show up 20 to 50 years after exposure. If you or a family member worked in construction, shipyards, or manufacturing before 1980, there may be money available. Even from companies that no longer exist.",
     time: "~3 min",
     accent: "#7B3500",
     accentBg: "rgba(123,53,0,0.07)",
@@ -64,7 +64,7 @@ const tools = [
 
 const stats = [
   { value: "$52B+",      label: "Remaining in asbestos trust funds" },
-  { value: "$20K–$100K", label: "Typical auto accident settlement range" },
+  { value: "$20K to $100K", label: "Typical auto accident settlement range" },
   { value: "66.7%",      label: "Of your wage, replaced by workers comp" },
   { value: "3 min",      label: "To complete any tool on this site" },
 ];
@@ -76,7 +76,7 @@ const trustPoints = [
   },
   {
     title: "The same math attorneys use.",
-    body: "Personal injury lawyers use the multiplier method. Workers comp uses a wage formula set by each state. We use both — and explain every step so you're not guessing.",
+    body: "Personal injury lawyers use the multiplier method. Workers comp uses a wage formula set by each state. We use both, and explain every step so you're not guessing.",
   },
   {
     title: "State rules, not national averages.",

@@ -60,19 +60,19 @@ export default function MesotheliomaQuiz() {
     const resultData = {
       strong: {
         label: "Strong Eligibility Indicated",
-        desc: "Occupational exposure plus a diagnosis is what asbestos trust funds and personal injury lawsuits were built for. An attorney who handles these cases can identify which manufacturers' trusts apply to your work history — often more than one — and file claims against each. Most take these cases on contingency with no upfront cost.",
+        desc: "Occupational exposure plus a diagnosis is what asbestos trust funds and personal injury lawsuits were built for. An attorney who handles these cases can identify which manufacturers' trusts apply to your work history, often more than one, and file claims against each. Most take these cases on contingency with no upfront cost.",
         action: "Get a Free Case Review",
         cls: "result-strong",
       },
       moderate: {
-        label: "Possible Eligibility — Worth a Consultation",
-        desc: "Your answers don't hit every factor, but that doesn't rule out a claim. Asbestos exposure history is complicated — attorneys who work these cases have detailed databases of what products were used in which job sites and industries. A free consultation costs you nothing and gives you a real answer.",
+        label: "Possible Eligibility, Worth a Consultation",
+        desc: "Your answers don't hit every factor, but that doesn't rule out a claim. Asbestos exposure history is complicated, attorneys who work these cases have detailed databases of what products were used in which job sites and industries. A free consultation costs you nothing and gives you a real answer.",
         action: "Get a Free Consultation",
         cls: "result-moderate",
       },
       unlikely: {
         label: "Eligibility Is Unclear",
-        desc: "The two strongest factors — occupational exposure and a confirmed diagnosis — aren't clearly present. That said, secondary exposure (a family member who worked around asbestos) and environmental exposure are both compensable in some cases. If you have any reason to suspect exposure, a free attorney consultation is still worth the call.",
+        desc: "The two strongest factors, occupational exposure and a confirmed diagnosis, aren't clearly present. That said, secondary exposure (a family member who worked around asbestos) and environmental exposure are both compensable in some cases. If you have any reason to suspect exposure, a free attorney consultation is still worth the call.",
         action: "Discuss Your History with an Attorney",
         cls: "result-unlikely",
       },
@@ -122,9 +122,9 @@ export default function MesotheliomaQuiz() {
           question="What best describes your history of asbestos exposure?"
           subtitle="Select the option that most closely matches your situation."
           options={[
-            { label: "Direct occupational exposure — I worked with or around asbestos-containing materials (construction, shipyard, manufacturing, military, etc.)", value: "occupational" },
-            { label: "Secondary / household exposure — A family member brought asbestos fibers home on their work clothes", value: "secondary" },
-            { label: "Environmental exposure — I lived near an asbestos mine, mill, or heavily contaminated area", value: "environmental" },
+            { label: "Direct occupational exposure, I worked with or around asbestos-containing materials (construction, shipyard, manufacturing, military, etc.)", value: "occupational" },
+            { label: "Secondary / household exposure, A family member brought asbestos fibers home on their work clothes", value: "secondary" },
+            { label: "Environmental exposure, I lived near an asbestos mine, mill, or heavily contaminated area", value: "environmental" },
             { label: "I am not aware of any asbestos exposure", value: "none" },
           ]}
           selected={answers.exposureType}
@@ -141,7 +141,7 @@ export default function MesotheliomaQuiz() {
             { label: "1–5 years", value: "1-5" },
             { label: "5–10 years", value: "5-10" },
             { label: "More than 10 years", value: "10+" },
-            { label: "Not applicable — no known exposure", value: "none" },
+            { label: "Not applicable, no known exposure", value: "none" },
           ]}
           selected={answers.yearsExposure}
           onSelect={(v) => pick("yearsExposure", v)}
@@ -153,7 +153,7 @@ export default function MesotheliomaQuiz() {
           question="What is your current health and diagnosis status?"
           options={[
             { label: "Confirmed mesothelioma, asbestosis, or asbestos-related lung cancer diagnosis", value: "confirmed" },
-            { label: "Suspected diagnosis — tests ongoing or biopsy results pending", value: "suspected" },
+            { label: "Suspected diagnosis, tests ongoing or biopsy results pending", value: "suspected" },
             { label: "No diagnosis, but I have respiratory symptoms (shortness of breath, chest pain, persistent cough)", value: "symptoms" },
             { label: "No symptoms and no diagnosis at this time", value: "none" },
           ]}

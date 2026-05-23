@@ -11,7 +11,7 @@ export default function DisclaimerBox() {
       aria-label="Legal disclaimer"
     >
       <strong style={{ color: "var(--gray-800)" }}>This is an estimate, not legal advice.</strong>{" "}
-      The number above is a starting point based on general formulas — not a prediction of what
+      The number above is a starting point based on general formulas, not a prediction of what
       you'll receive. Real settlements depend on evidence quality, insurance policy limits,
       your state's specific rules, and facts no calculator can account for. Talk to a licensed
       attorney before making any decisions about your claim.

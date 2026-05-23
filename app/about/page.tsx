@@ -3,7 +3,7 @@ import TrustBar from "@/components/TrustBar";
 import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
-  title: "About ClaimAdvisor — How the Tools Work and Why We Built Them",
+  title: "About ClaimAdvisor, How the Tools Work and Why We Built Them",
   description: "ClaimAdvisor is a free legal information resource for US residents. Learn who runs it, how the calculators work, and what they can and can't tell you.",
 };
 
@@ -30,7 +30,7 @@ export default function AboutPage() {
             <div className="space-y-4 text-base leading-relaxed" style={{ color: "var(--gray-600)" }}>
               <p>
                 Insurance adjusters make first offers every day. Most injured people receive
-                one in their lifetime. That information gap is not accidental — it's how
+                one in their lifetime. That information gap is not accidental, it's how
                 low settlements happen.
               </p>
               <p>
@@ -42,7 +42,7 @@ export default function AboutPage() {
               </p>
               <p>
                 ClaimAdvisor exists to close that gap a little. The formulas we use aren't
-                secret — attorneys use them, adjusters use them, and anyone willing to dig
+                secret, attorneys use them, adjusters use them, and anyone willing to dig
                 through state workers comp board publications can find the rate tables.
                 We just put it in one place and made it usable without a law degree.
               </p>
@@ -59,7 +59,7 @@ export default function AboutPage() {
                 ClaimAdvisor was built by a small team with backgrounds in legal research,
                 consumer information publishing, and web development. We are not a law firm.
                 Nobody here will represent you or give you legal advice. That boundary is
-                intentional — our job is information, not counsel.
+                intentional, our job is information, not counsel.
               </p>
               <p>
                 We're based in the US and the tools are designed specifically for the US
@@ -89,7 +89,7 @@ export default function AboutPage() {
                   Takes your medical bills plus lost wages, multiplies by a factor based on
                   injury severity (1.5× for minor injuries, up to 5× for permanent disability),
                   then reduces the total by your fault percentage. This is the multiplier
-                  method — the standard starting point in personal injury negotiations.
+                  method, the standard starting point in personal injury negotiations.
                   It produces a range, not a single number, because the multiplier is
                   genuinely negotiated case by case.
                 </p>
@@ -109,8 +109,8 @@ export default function AboutPage() {
                 <p className="mt-1">
                   Scores your situation across three factors: type of asbestos exposure
                   (occupational scores highest), duration of exposure, and diagnosis status
-                  (confirmed diagnosis adds the most points). The output — Strong, Moderate,
-                  or Unlikely — reflects how closely your situation matches the intake
+                  (confirmed diagnosis adds the most points). The output, Strong, Moderate,
+                  or Unlikely, reflects how closely your situation matches the intake
                   criteria that asbestos litigation attorneys publish for free consultations.
                   It is not a legal determination.
                 </p>
@@ -133,7 +133,7 @@ export default function AboutPage() {
               </p>
               <p>
                 Two people with identical inputs can have very different outcomes in court.
-                The tools give you a reasonable starting point — not a prediction.
+                The tools give you a reasonable starting point, not a prediction.
               </p>
               <p>
                 If you've been injured, use the estimate to walk into a free attorney

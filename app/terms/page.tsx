@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import TrustBar from "@/components/TrustBar";
 
 export const metadata: Metadata = {
-  title: "Terms of Use — ClaimAdvisor",
+  title: "Terms of Use, ClaimAdvisor",
   description: "Read ClaimAdvisor's terms of use, including disclaimers that our tools are informational only and do not constitute legal advice.",
 };
 
@@ -31,7 +31,7 @@ export default function TermsPage() {
           <hr style={{ borderColor: "var(--gray-100)" }} />
 
           <section>
-            <h2 className="text-xl font-bold mb-3" style={{ color: "var(--navy)" }}>2. No Legal Advice — Informational Purposes Only</h2>
+            <h2 className="text-xl font-bold mb-3" style={{ color: "var(--navy)" }}>2. No Legal Advice, Informational Purposes Only</h2>
             <div className="p-4 rounded-lg mb-4 font-medium text-sm" style={{ background: "var(--red-light)", color: "var(--red)", border: "1px solid #FCA5A5" }}>
               ClaimAdvisor does not provide legal advice. The tools, content, estimates, and information on this Site are for general informational and educational purposes only. Nothing on this Site constitutes legal advice or creates an attorney-client relationship.
             </div>

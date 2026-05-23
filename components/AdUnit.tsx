@@ -31,7 +31,7 @@ export default function AdUnit({ slot, format = "rectangle", className = "" }: A
       style={{ width: "100%", maxWidth: dim.width, height: dim.height, margin: "0 auto" }}
       aria-label="Advertisement"
     >
-      <span>Ad — {dim.label} — Slot: {slot}</span>
+      <span>Ad, {dim.label}, Slot: {slot}</span>
     </div>
   );
 }

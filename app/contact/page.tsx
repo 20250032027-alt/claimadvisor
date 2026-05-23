@@ -3,7 +3,7 @@ import ContactForm from "./ContactForm";
 import TrustBar from "@/components/TrustBar";
 
 export const metadata: Metadata = {
-  title: "Contact ClaimAdvisor — Get in Touch",
+  title: "Contact ClaimAdvisor, Get in Touch",
   description: "Have a question about our legal claims tools, a correction to report, or feedback to share? Use our contact form to reach the ClaimAdvisor editorial team.",
 };
 
@@ -26,7 +26,7 @@ export default function ContactPage() {
           <div>
             <h2 className="text-xl font-bold mb-3">What to expect</h2>
             <p className="text-sm leading-relaxed" style={{ color: "var(--gray-500)" }}>
-              We typically respond to editorial inquiries within 2–3 business days. For legal questions about your specific case, please consult a licensed attorney — we cannot provide that advice.
+              We typically respond to editorial inquiries within 2–3 business days. For legal questions about your specific case, please consult a licensed attorney. We cannot provide that advice.
             </p>
           </div>
           <div>

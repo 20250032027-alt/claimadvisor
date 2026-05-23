@@ -1,6 +1,6 @@
 export default function TrustBar() {
   const signals = [
-    "Free — No Obligation",
+    "Free, No Obligation",
     "100% Confidential",
     "No Personal Data Sold",
     "No Sign-Up Required",

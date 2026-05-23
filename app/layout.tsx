@@ -6,11 +6,11 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.claimadvisor.info"),
   title: {
-    default: "ClaimAdvisor — Free Legal Claims Eligibility Tools",
+    default: "ClaimAdvisor, Free Legal Claims Eligibility Tools",
     template: "%s | ClaimAdvisor",
   },
   description:
-    "Free, confidential tools to estimate your legal claim value. Car accident settlements, workers compensation benefits, and mesothelioma eligibility — no obligation, no personal data sold.",
+    "Free, confidential tools to estimate your legal claim value. Car accident settlements, workers compensation benefits, and mesothelioma eligibility, no obligation, no personal data sold.",
   keywords: [
     "legal claim calculator",
     "settlement estimator",
@@ -27,7 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <meta name="google-adsense-account" content="ca-pub-7492388540350253" />
-        {/* Fonts loaded via link tag — works reliably on Vercel at runtime */}
+        {/* Fonts loaded via link tag, works reliably on Vercel at runtime */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link

@@ -83,13 +83,13 @@ export default function CarAccidentQuiz() {
             Estimate Complete
           </div>
           <h2 className="font-display text-2xl font-bold mb-2">Your Estimated Settlement Range</h2>
-          <p className="text-sm" style={{ color: "var(--gray-500)" }}>Based on the multiplier method — not a guarantee, but a real starting point</p>
+          <p className="text-sm" style={{ color: "var(--gray-500)" }}>Based on the multiplier method. Not a guarantee, but a real starting point.</p>
         </div>
 
         <div className="rounded-xl p-8 text-center mb-6" style={{ background: "var(--navy)", color: "white" }}>
           <div className="text-sm mb-2" style={{ color: "var(--gold-light)" }}>Estimated Range</div>
           <div className="font-display text-3xl md:text-4xl font-bold">
-            {formatCurrency(Math.max(lowEst, 1000))} &ndash; {formatCurrency(Math.max(highEst, 2000))}
+            {formatCurrency(Math.max(lowEst, 1000))} to {formatCurrency(Math.max(highEst, 2000))}
           </div>
           <div className="text-xs mt-2 opacity-60">Before attorney fees and litigation costs</div>
         </div>
@@ -153,13 +153,13 @@ export default function CarAccidentQuiz() {
       {step === 2 && (
         <QuizStep
           question="Approximately what percentage of fault was yours?"
-          subtitle="Be honest — overestimating your innocence leads to inaccurate estimates."
+          subtitle="Be honest, overestimating your innocence leads to inaccurate estimates."
           options={[
-            { label: "0% — The accident was entirely the other driver's fault", value: "0" },
-            { label: "About 10% — I may have contributed slightly", value: "10" },
-            { label: "About 25% — I share some responsibility", value: "25" },
-            { label: "About 50% — Fault was roughly equal", value: "50" },
-            { label: "More than 50% — I was mostly at fault", value: "75" },
+            { label: "0%, The accident was entirely the other driver's fault", value: "0" },
+            { label: "About 10%, I may have contributed slightly", value: "10" },
+            { label: "About 25%, I share some responsibility", value: "25" },
+            { label: "About 50%, Fault was roughly equal", value: "50" },
+            { label: "More than 50%, I was mostly at fault", value: "75" },
           ]}
           selected={answers.fault}
           onSelect={(v) => pick("fault", v)}
@@ -170,10 +170,10 @@ export default function CarAccidentQuiz() {
         <QuizStep
           question="How would you describe your injuries?"
           options={[
-            { label: "Minor — Soft tissue, whiplash, minor bruising (healed fully)", value: "minor" },
-            { label: "Moderate — Broken bone, stitches, several weeks of recovery", value: "moderate" },
-            { label: "Serious — Surgery required, months of recovery or lasting effects", value: "serious" },
-            { label: "Severe — Permanent disability, paralysis, or traumatic brain injury", value: "severe" },
+            { label: "Minor, Soft tissue, whiplash, minor bruising (healed fully)", value: "minor" },
+            { label: "Moderate, Broken bone, stitches, several weeks of recovery", value: "moderate" },
+            { label: "Serious, Surgery required, months of recovery or lasting effects", value: "serious" },
+            { label: "Severe, Permanent disability, paralysis, or traumatic brain injury", value: "severe" },
           ]}
           selected={answers.severity}
           onSelect={(v) => pick("severity", v)}

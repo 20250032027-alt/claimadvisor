@@ -5,7 +5,7 @@ import TrustBar from "@/components/TrustBar";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Car Accident Settlement Calculator — What Is My Case Worth?",
+  title: "Car Accident Settlement Calculator, What Is My Case Worth?",
   description: "How much is your car accident claim worth? Estimate your settlement range in 2 minutes based on medical bills, lost wages, injury severity, and fault percentage.",
 };
 
@@ -16,7 +16,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "How is a car accident settlement calculated?",
-      acceptedAnswer: { "@type": "Answer", text: "Attorneys start with your special damages — the hard costs you can document: medical bills, lost wages, property damage. They then multiply that figure by somewhere between 1.5 and 5, depending on how serious and permanent the injuries are. That multiplied amount covers pain and suffering. If you share some fault for the crash, the total is reduced by your percentage." }
+      acceptedAnswer: { "@type": "Answer", text: "Attorneys start with your special damages (the hard costs you can document: medical bills, lost wages, property damage). They then multiply that figure by somewhere between 1.5 and 5, depending on how serious and permanent the injuries are. That multiplied amount covers pain and suffering. If you share some fault for the crash, the total is reduced by your percentage." }
     },
     {
       "@type": "Question",
@@ -31,7 +31,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "How long does a car accident settlement take?",
-      acceptedAnswer: { "@type": "Answer", text: "Straightforward cases with clear liability and injuries that fully heal often wrap up in 3 to 6 months. Once surgeries, ongoing treatment, or disputed liability enter the picture, a year or two is normal. Most attorneys advise against settling before you hit maximum medical improvement — the point your doctor says you've recovered as much as you will. Settling too early means you cannot go back for future medical costs." }
+      acceptedAnswer: { "@type": "Answer", text: "Straightforward cases with clear liability and injuries that fully heal often wrap up in 3 to 6 months. Once surgeries, ongoing treatment, or disputed liability enter the picture, a year or two is normal. Most attorneys advise against settling before you hit maximum medical improvement, the point your doctor says you've recovered as much as you will. Settling too early means you cannot go back for future medical costs." }
     },
     {
       "@type": "Question",
@@ -54,7 +54,7 @@ export default function CarAccidentPage() {
           </h1>
           <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
             Answer six questions about your crash, injuries, and lost income to get an estimated
-            settlement range — the same starting point an attorney would use.
+            settlement range, the same starting point an attorney would use.
           </p>
         </div>
       </section>
@@ -87,13 +87,13 @@ export default function CarAccidentPage() {
         </p>
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
           <strong style={{ color: "var(--gray-800)" }}>Economic damages</strong> are the easy
-          part — add up your medical bills, physical therapy, prescriptions, and income you lost
+          part: add up your medical bills, physical therapy, prescriptions, and income you lost
           while recovering. Keep every receipt and every Explanation of Benefits from your
           insurance company. These numbers form the base of your claim.
         </p>
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
-          <strong style={{ color: "var(--gray-800)" }}>Non-economic damages</strong> — pain and
-          suffering, emotional distress, loss of enjoyment — don't come with a receipt.
+          <strong style={{ color: "var(--gray-800)" }}>Non-economic damages</strong> cover pain and
+          suffering, emotional distress, and loss of enjoyment. None of those come with a receipt.
           The multiplier method is the most common way to quantify them: take your economic
           damages and multiply by 1.5 to 5, depending on how severe and lasting the injury is.
           A neck strain that healed in six weeks uses a lower multiplier than a herniated disc
@@ -102,7 +102,7 @@ export default function CarAccidentPage() {
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
           Your state's fault rules then come into play. If you were partly responsible for the
           crash, most states will reduce your payout by that percentage. And if the at-fault
-          driver only carries the state minimum in liability coverage — $25,000 in many states —
+          driver only carries the state minimum in liability coverage, $25,000 in many states —
           that cap limits what their insurer pays directly. Your own underinsured motorist
           coverage can fill the gap.
         </p>
@@ -110,7 +110,7 @@ export default function CarAccidentPage() {
         <h3 className="text-xl font-bold mb-4 mt-8">What Affects Your Settlement the Most</h3>
         <ul className="space-y-3 mb-8">
           {[
-            ["Medical bills and future treatment costs", "The foundation of the calculation. Future costs — additional surgery, ongoing physical therapy — are also compensable if documented by your doctors."],
+            ["Medical bills and future treatment costs", "The foundation of the calculation. Future costs, additional surgery, ongoing physical therapy, are also compensable if documented by your doctors."],
             ["Lost income and reduced earning capacity", "Both past lost wages and any lasting impact on your ability to earn. If your injury changed your career, that difference in lifetime earnings matters."],
             ["Injury type and permanence", "Injuries that fully heal settle for less than those that leave lasting limitations. Chronic pain, permanent nerve damage, and surgical hardware carry higher multipliers."],
             ["Your percentage of fault", "Even being 10 percent at fault reduces your recovery by 10 percent in comparative fault states. Contributory negligence states are harsher."],
@@ -136,7 +136,7 @@ export default function CarAccidentPage() {
           {[
             {
               q: "How is a car accident settlement calculated?",
-              a: "Attorneys start with your special damages — medical bills, lost wages, property damage — then multiply that figure by 1.5 to 5 depending on injury severity. That product covers pain and suffering. Fault percentage then reduces the total proportionally.",
+              a: "Attorneys start with your special damages, medical bills, lost wages, property damage, then multiply that figure by 1.5 to 5 depending on injury severity. That product covers pain and suffering. Fault percentage then reduces the total proportionally.",
             },
             {
               q: "What is the average car accident settlement in the US?",

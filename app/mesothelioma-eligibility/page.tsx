@@ -5,7 +5,7 @@ import TrustBar from "@/components/TrustBar";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Mesothelioma Compensation Eligibility Checker — Do You Qualify?",
+  title: "Mesothelioma Compensation Eligibility Checker, Do You Qualify?",
   description: "Find out if your asbestos exposure history or mesothelioma diagnosis may qualify you for legal compensation. Trust funds, lawsuits, and VA claims explained. Free, 3-minute check.",
 };
 
@@ -16,12 +16,12 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Who can file a mesothelioma lawsuit?",
-      acceptedAnswer: { "@type": "Answer", text: "Anyone diagnosed with mesothelioma, asbestosis, or asbestos-related lung cancer can file a personal injury claim. If the person has passed away, family members can file a wrongful death claim. Claims can be filed decades after the original exposure — the clock usually starts at diagnosis, not the day you worked around asbestos." }
+      acceptedAnswer: { "@type": "Answer", text: "Anyone diagnosed with mesothelioma, asbestosis, or asbestos-related lung cancer can file a personal injury claim. If the person has passed away, family members can file a wrongful death claim. Claims can be filed decades after the original exposure. The clock usually starts at diagnosis, not the day you worked around asbestos." }
     },
     {
       "@type": "Question",
       name: "What are asbestos trust funds and how do they work?",
-      acceptedAnswer: { "@type": "Answer", text: "When major asbestos manufacturers declared bankruptcy, courts required them to set up trusts to compensate current and future victims. More than $30 billion remains in these trusts. Filing a trust claim is separate from a lawsuit — you don't have to prove the company still exists or is solvent. An attorney identifies which trusts apply to your work history and files on your behalf." }
+      acceptedAnswer: { "@type": "Answer", text: "When major asbestos manufacturers declared bankruptcy, courts required them to set up trusts to compensate current and future victims. More than $30 billion remains in these trusts. Filing a trust claim is separate from a lawsuit. You don't have to prove the company still exists or is solvent. An attorney identifies which trusts apply to your work history and files on your behalf." }
     },
     {
       "@type": "Question",
@@ -31,7 +31,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "Is there a time limit for filing a mesothelioma claim?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. Statutes of limitations range from 1 to 6 years depending on the state, measured from the date of diagnosis — not the date of exposure. Because mesothelioma can take 20 to 50 years to develop after asbestos exposure, many victims are diagnosed long after the companies responsible have gone bankrupt. Acting quickly after diagnosis preserves your options." }
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Statutes of limitations range from 1 to 6 years depending on the state, measured from the date of diagnosis, not the date of exposure. Because mesothelioma can take 20 to 50 years to develop after asbestos exposure, many victims are diagnosed long after the companies responsible have gone bankrupt. Acting quickly after diagnosis preserves your options." }
     },
     {
       "@type": "Question",
@@ -91,7 +91,7 @@ export default function MesotheliomaPage() {
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
           The disease typically takes 20 to 50 years to appear after first exposure. Someone
           diagnosed in 2024 may have been exposed as a pipefitter in 1975. That long gap
-          doesn't eliminate your legal options — the statute of limitations in most states
+          doesn't eliminate your legal options, the statute of limitations in most states
           starts at the date of diagnosis, not the date of the exposure.
         </p>
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
@@ -99,7 +99,7 @@ export default function MesotheliomaPage() {
           <strong style={{ color: "var(--gray-800)" }}>personal injury or wrongful death
           lawsuit</strong> against the manufacturers of the specific asbestos products you
           worked with. The second is a <strong style={{ color: "var(--gray-800)" }}>trust
-          fund claim</strong> — dozens of bankrupt asbestos companies were required by courts
+          fund claim</strong>, dozens of bankrupt asbestos companies were required by courts
           to establish compensation funds, and more than $30 billion remains available.
           Most victims pursue both simultaneously.
         </p>
@@ -139,11 +139,11 @@ export default function MesotheliomaPage() {
           {[
             {
               q: "Who can file a mesothelioma lawsuit?",
-              a: "Anyone diagnosed with mesothelioma, asbestosis, or asbestos-related lung cancer. Family members can file wrongful death claims. The statute of limitations starts at diagnosis, not exposure — so cases filed decades after the original exposure are common.",
+              a: "Anyone diagnosed with mesothelioma, asbestosis, or asbestos-related lung cancer. Family members can file wrongful death claims. The statute of limitations starts at diagnosis, not exposure, so cases filed decades after the original exposure are common.",
             },
             {
               q: "What are asbestos trust funds and how do they work?",
-              a: "Bankrupt asbestos manufacturers were required to fund trusts to compensate victims. Over $30 billion remains. Trust claims are separate from lawsuits — you don't need to prove the company is still solvent. Attorneys identify which trusts apply to your work history and file on your behalf.",
+              a: "Bankrupt asbestos manufacturers were required to fund trusts to compensate victims. Over $30 billion remains. Trust claims are separate from lawsuits, you don't need to prove the company is still solvent. Attorneys identify which trusts apply to your work history and file on your behalf.",
             },
             {
               q: "How much compensation can a mesothelioma victim receive?",
@@ -151,7 +151,7 @@ export default function MesotheliomaPage() {
             },
             {
               q: "Is there a time limit for filing a mesothelioma claim?",
-              a: "Yes. Statutes of limitations are 1 to 6 years from diagnosis depending on the state. Acting quickly after diagnosis is critical — delays can permanently close off legal options.",
+              a: "Yes. Statutes of limitations are 1 to 6 years from diagnosis depending on the state. Acting quickly after diagnosis is critical, delays can permanently close off legal options.",
             },
             {
               q: "Do I need a diagnosis to file a mesothelioma claim?",
