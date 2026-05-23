@@ -4,9 +4,9 @@ import TrustBar from "@/components/TrustBar";
 import AdUnit from "@/components/AdUnit";
 
 export const metadata: Metadata = {
-  title: "Free Legal Claims Eligibility Tools — Car Accident, Workers Comp, Mesothelioma",
+  title: "How Much Is My Legal Claim Worth? Free Estimation Tools — ClaimAdvisor",
   description:
-    "Use ClaimAdvisor's free, confidential tools to find out if you may qualify for legal compensation. Estimate car accident settlements, workers comp benefits, and mesothelioma eligibility in minutes.",
+    "Find out what your car accident, workers comp, or mesothelioma claim may be worth. Free calculators built on real legal formulas. No sign-up, no phone calls.",
 };
 
 const tools = [
@@ -14,7 +14,7 @@ const tools = [
     href: "/car-accident-calculator",
     tag: "Settlement Calculator",
     title: "Car Accident Settlement Estimator",
-    desc: "Were you injured in a car accident that wasn't your fault? Estimate your potential settlement range based on medical bills, lost wages, and injury severity.",
+    desc: "Got hurt in a crash that wasn't your fault? Plug in your medical bills, lost wages, and injury type to see a realistic settlement range — the same math your attorney would start with.",
     time: "~2 min",
     accent: "#0B3D91",
     accentBg: "rgba(11,61,145,0.07)",
@@ -32,7 +32,7 @@ const tools = [
     href: "/workers-comp-calculator",
     tag: "Benefit Calculator",
     title: "Workers Compensation Estimator",
-    desc: "Injured on the job? Estimate your weekly benefit and total claim value based on your state, your wage, and the time you've been unable to work.",
+    desc: "Hurt on the job? Most people don't know their state caps what they can receive — or how the two-thirds wage formula actually works. This tool shows you the number before you negotiate.",
     time: "~2 min",
     accent: "#1A5C35",
     accentBg: "rgba(26,92,53,0.07)",
@@ -49,7 +49,7 @@ const tools = [
     href: "/mesothelioma-eligibility",
     tag: "Eligibility Checker",
     title: "Mesothelioma Legal Eligibility",
-    desc: "Asbestos exposure can lead to mesothelioma decades later. Find out whether your history may qualify you for compensation through lawsuits or trust funds.",
+    desc: "Asbestos diseases show up 20 to 50 years after exposure. If you or a family member worked in construction, shipyards, or manufacturing before 1980, there may be money available — even from companies that no longer exist.",
     time: "~3 min",
     accent: "#7B3500",
     accentBg: "rgba(123,53,0,0.07)",
@@ -63,28 +63,28 @@ const tools = [
 ];
 
 const stats = [
-  { value: "$52B+",           label: "Available in mesothelioma trust funds" },
-  { value: "$20K–$100K",      label: "Typical auto accident settlement range" },
-  { value: "66.7%",           label: "Wage replacement in most states" },
-  { value: "3 min",           label: "Average time to complete a tool" },
+  { value: "$52B+",      label: "Remaining in asbestos trust funds" },
+  { value: "$20K–$100K", label: "Typical auto accident settlement range" },
+  { value: "66.7%",      label: "Of your wage, replaced by workers comp" },
+  { value: "3 min",      label: "To complete any tool on this site" },
 ];
 
 const trustPoints = [
   {
-    title: "No sign-up, no phone calls",
-    body: "You don't need to provide your name, phone number, or email to use any of our calculators. Results are instant and stay in your browser.",
+    title: "No sign-up. No phone calls.",
+    body: "You don't need to hand over your name, number, or email to use any of these tools. The estimate runs in your browser and stays there.",
   },
   {
-    title: "Built on real legal formulas",
-    body: "Our estimates use the same multiplier and wage-replacement formulas that attorneys and insurance adjusters reference. We explain every step in plain English.",
+    title: "The same math attorneys use.",
+    body: "Personal injury lawyers use the multiplier method. Workers comp uses a wage formula set by each state. We use both — and explain every step so you're not guessing.",
   },
   {
-    title: "State-specific where it matters",
-    body: "Workers compensation rates vary widely by state. Our estimator applies the published rules for the five most common states and the national average for all others.",
+    title: "State rules, not national averages.",
+    body: "Workers comp benefit caps vary by hundreds of dollars a week depending on where you live. We apply your state's actual published cap, not a rounded national figure.",
   },
   {
-    title: "A starting point, not a verdict",
-    body: "We give you enough context to walk into a free attorney consultation informed and prepared — not surprised by the number on an initial offer.",
+    title: "A number to negotiate from.",
+    body: "Insurance adjusters make low first offers because most people don't know what their case is worth. Knowing your range before that call changes the conversation.",
   },
 ];
 
@@ -93,14 +93,13 @@ export default function Home() {
     <>
       <TrustBar />
 
-      {/* ── Hero ──────────────────────────────────── */}
+      {/* Hero */}
       <section
         style={{
           background: "linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%)",
         }}
         className="relative overflow-hidden py-24 px-5"
       >
-        {/* Subtle grid texture */}
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none"
@@ -109,32 +108,25 @@ export default function Home() {
               "radial-gradient(circle at 70% 40%, rgba(200,151,58,0.08) 0%, transparent 60%), radial-gradient(circle at 20% 80%, rgba(18,45,84,0.6) 0%, transparent 50%)",
           }}
         />
-
         <div className="relative max-w-4xl mx-auto text-center">
           <div className="section-label">Free Legal Estimation Tools</div>
           <h1
             className="font-display text-white mb-6 leading-tight"
             style={{ fontSize: "clamp(2rem, 5vw, 3.25rem)", fontWeight: 700 }}
           >
-            Find Out If You May Qualify
+            Find Out What Your
             <br />
-            <em
-              style={{
-                color: "var(--gold-light)",
-                fontStyle: "italic",
-                fontWeight: 700,
-              }}
-            >
-              for Legal Compensation
+            <em style={{ color: "var(--gold-light)", fontStyle: "italic" }}>
+              Legal Claim May Be Worth
             </em>
           </h1>
           <p
             className="mx-auto mb-10 text-lg leading-relaxed"
-            style={{ color: "rgba(255,255,255,0.68)", maxWidth: "580px" }}
+            style={{ color: "rgba(255,255,255,0.68)", maxWidth: "560px" }}
           >
-            ClaimAdvisor provides free, no-obligation tools to help you understand whether
-            your situation — a car accident, workplace injury, or asbestos exposure — may
-            entitle you to financial compensation under US law.
+            Free calculators for car accident settlements, workers compensation benefits,
+            and mesothelioma eligibility. Built on real legal formulas.
+            No personal information required.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/car-accident-calculator" className="btn-primary">
@@ -147,24 +139,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Leaderboard Ad ───────────────────────── */}
+      {/* Leaderboard Ad */}
       <div className="max-w-6xl mx-auto px-5 py-6 flex justify-center">
         <AdUnit slot="1234567890" format="banner" />
       </div>
 
-      {/* ── Tool Cards ───────────────────────────── */}
+      {/* Tool Cards */}
       <section className="max-w-6xl mx-auto px-5 py-14">
         <div className="text-center mb-12">
           <div className="section-label">Three Free Tools</div>
-          <h2
-            className="font-display text-3xl font-bold mb-3"
-            style={{ color: "var(--navy)" }}
-          >
+          <h2 className="font-display text-3xl font-bold mb-3" style={{ color: "var(--navy)" }}>
             Which situation applies to you?
           </h2>
           <p className="text-base" style={{ color: "var(--gray-600)", maxWidth: 480, margin: "0 auto" }}>
-            Each tool asks a few short questions and produces an honest, data-driven estimate
-            — with no personal information required.
+            A short quiz. An honest estimate. No account needed.
           </p>
         </div>
 
@@ -176,47 +164,29 @@ export default function Home() {
               className="card p-7 block group"
               style={{ textDecoration: "none" }}
             >
-              {/* Icon */}
               <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
                 style={{ background: tool.accentBg }}
               >
                 {tool.icon}
               </div>
-
-              {/* Tag */}
-              <div
-                className="text-xs font-bold tracking-widest uppercase mb-2"
-                style={{ color: tool.accent }}
-              >
+              <div className="text-xs font-bold tracking-widest uppercase mb-2" style={{ color: tool.accent }}>
                 {tool.tag}
               </div>
-
-              <h3
-                className="font-display text-lg font-bold mb-3 leading-snug"
-                style={{ color: "var(--navy)" }}
-              >
+              <h3 className="font-display text-lg font-bold mb-3 leading-snug" style={{ color: "var(--navy)" }}>
                 {tool.title}
               </h3>
-
               <p className="text-sm leading-relaxed mb-5" style={{ color: "var(--gray-600)" }}>
                 {tool.desc}
               </p>
-
               <div className="flex items-center justify-between">
-                <span
-                  className="text-sm font-semibold flex items-center gap-1.5"
-                  style={{ color: "var(--gold)" }}
-                >
+                <span className="text-sm font-semibold flex items-center gap-1.5" style={{ color: "var(--gold)" }}>
                   Get My Estimate
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                     <path d="M3 7h8M7.5 4l3.5 3-3.5 3" stroke="var(--gold)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
                 </span>
-                <span
-                  className="text-xs font-medium px-2 py-0.5 rounded-full"
-                  style={{ background: "var(--off-white)", color: "var(--gray-600)" }}
-                >
+                <span className="text-xs font-medium px-2 py-0.5 rounded-full" style={{ background: "var(--off-white)", color: "var(--gray-600)" }}>
                   {tool.time}
                 </span>
               </div>
@@ -225,22 +195,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Stats Bar — Policygenius-style ───────── */}
+      {/* Stats Bar */}
       <section
-        style={{
-          background: "var(--navy)",
-          borderTop: "1px solid rgba(255,255,255,0.06)",
-          borderBottom: "1px solid rgba(255,255,255,0.06)",
-        }}
+        style={{ background: "var(--navy)", borderTop: "1px solid rgba(255,255,255,0.06)", borderBottom: "1px solid rgba(255,255,255,0.06)" }}
         className="py-12 px-5"
       >
         <div className="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((s) => (
             <div key={s.value}>
-              <div
-                className="font-display text-3xl font-bold mb-1.5"
-                style={{ color: "var(--gold-light)" }}
-              >
+              <div className="font-display text-3xl font-bold mb-1.5" style={{ color: "var(--gold-light)" }}>
                 {s.value}
               </div>
               <div className="text-xs leading-snug" style={{ color: "rgba(255,255,255,0.55)" }}>
@@ -251,12 +214,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Why ClaimAdvisor — Nolo-style grid ───── */}
+      {/* Why Section */}
       <section className="max-w-6xl mx-auto px-5 py-16">
         <div className="text-center mb-12">
           <div className="section-label">Why Use ClaimAdvisor</div>
           <h2 className="font-display text-3xl font-bold" style={{ color: "var(--navy)" }}>
-            Information that puts you in control
+            Know your number before anyone else does
           </h2>
         </div>
         <div className="grid md:grid-cols-2 gap-6">
@@ -275,10 +238,7 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <h3
-                  className="font-semibold text-base mb-1"
-                  style={{ color: "var(--navy)", fontFamily: "inherit" }}
-                >
+                <h3 className="font-semibold text-base mb-1" style={{ color: "var(--navy)", fontFamily: "inherit" }}>
                   {item.title}
                 </h3>
                 <p className="text-sm leading-relaxed" style={{ color: "var(--gray-600)" }}>
@@ -290,12 +250,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── In-content Ad ────────────────────────── */}
+      {/* In-content Ad */}
       <div className="max-w-6xl mx-auto px-5 pb-8 flex justify-center">
         <AdUnit slot="2345678901" format="rectangle" />
       </div>
 
-      {/* ── CTA Band ─────────────────────────────── */}
+      {/* CTA */}
       <section
         style={{
           background: "linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%)",
@@ -304,9 +264,7 @@ export default function Home() {
         className="py-16 px-5"
       >
         <div className="max-w-2xl mx-auto text-center">
-          <h2
-            className="font-display text-3xl font-bold text-white mb-4"
-          >
+          <h2 className="font-display text-3xl font-bold text-white mb-4">
             Ready to check your eligibility?
           </h2>
           <p className="mb-8 text-lg" style={{ color: "rgba(255,255,255,0.65)" }}>

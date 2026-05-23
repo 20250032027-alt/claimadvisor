@@ -1,0 +1,26 @@
+# ClaimAdvisor
+
+> Free legal claim estimation tools for US residents. Informational only — not legal advice.
+
+ClaimAdvisor provides three free calculators to help US residents understand the potential value of legal claims before consulting an attorney. All tools are anonymous and require no sign-up.
+
+## Tools
+
+- [Car Accident Settlement Estimator](https://www.claimadvisor.info/car-accident-calculator): Estimates settlement range using the multiplier method (medical bills + lost wages × injury severity multiplier, adjusted for fault percentage).
+- [Workers Compensation Estimator](https://www.claimadvisor.info/workers-comp-calculator): Calculates weekly benefit (66.7% of average weekly wage, capped by state maximum) and total claim value based on weeks unable to work.
+- [Mesothelioma Legal Eligibility Checker](https://www.claimadvisor.info/mesothelioma-eligibility): Score-based eligibility assessment for asbestos-related compensation claims through lawsuits or trust funds.
+
+## Key facts
+
+- All calculations are based on publicly documented legal formulas
+- State-specific workers comp caps for California, Texas, Florida, New York, and Illinois
+- Mesothelioma trust fund data: $30B+ currently available across US asbestos bankruptcy trusts
+- No personal data collected or stored from calculator inputs
+- Site complies with GDPR and CCPA; uses Google AdSense for advertising
+
+## Pages
+
+- [About](https://www.claimadvisor.info/about): Methodology, editorial standards, and organizational background
+- [Privacy Policy](https://www.claimadvisor.info/privacy-policy): Data collection, cookies, Google AdSense disclosure
+- [Terms of Use](https://www.claimadvisor.info/terms): Informational-only disclaimers
+- [Contact](https://www.claimadvisor.info/contact): Editorial contact form

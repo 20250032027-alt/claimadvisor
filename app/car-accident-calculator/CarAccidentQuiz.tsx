@@ -83,7 +83,7 @@ export default function CarAccidentQuiz() {
             Estimate Complete
           </div>
           <h2 className="font-display text-2xl font-bold mb-2">Your Estimated Settlement Range</h2>
-          <p className="text-sm" style={{ color: "var(--gray-500)" }}>Based on your answers — not a guarantee</p>
+          <p className="text-sm" style={{ color: "var(--gray-500)" }}>Based on the multiplier method — not a guarantee, but a real starting point</p>
         </div>
 
         <div className="rounded-xl p-8 text-center mb-6" style={{ background: "var(--navy)", color: "white" }}>
@@ -120,7 +120,7 @@ export default function CarAccidentQuiz() {
             rel="noopener noreferrer"
             className="btn-primary text-center flex-1"
           >
-            Consult a Personal Injury Attorney
+            Get a Free Attorney Consultation
           </a>
           <button onClick={reset} className="btn-secondary flex-1">
             Start Over

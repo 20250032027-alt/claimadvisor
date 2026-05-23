@@ -10,11 +10,11 @@ export default function DisclaimerBox() {
       role="note"
       aria-label="Legal disclaimer"
     >
-      <strong style={{ color: "var(--gray-800)" }}>Important Disclaimer:</strong> The results
-      shown are estimates based on general formulas and publicly available data. They are not
-      legal advice, not a guarantee of any outcome, and should not be relied upon as the basis
-      for any legal decision. Every case is unique. Consult a licensed attorney in your state
-      before taking any action.
+      <strong style={{ color: "var(--gray-800)" }}>This is an estimate, not legal advice.</strong>{" "}
+      The number above is a starting point based on general formulas — not a prediction of what
+      you'll receive. Real settlements depend on evidence quality, insurance policy limits,
+      your state's specific rules, and facts no calculator can account for. Talk to a licensed
+      attorney before making any decisions about your claim.
     </div>
   );
 }

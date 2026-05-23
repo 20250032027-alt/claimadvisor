@@ -78,7 +78,7 @@ export default function WorkersCompQuiz() {
             Estimate Complete
           </div>
           <h2 className="font-display text-2xl font-bold mb-2">Your Estimated Workers Comp Benefits</h2>
-          <p className="text-sm" style={{ color: "var(--gray-500)" }}>Based on {state} rules — for informational purposes only</p>
+          <p className="text-sm" style={{ color: "var(--gray-500)" }}>{state} formula applied — the weekly cap is what most people don't expect</p>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">

@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import WorkersCompQuiz from "./WorkersCompQuiz";
 import AdUnit from "@/components/AdUnit";
 import TrustBar from "@/components/TrustBar";
+import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Workers Compensation Benefit Estimator — How Much Will I Receive?",
-  description: "Estimate your weekly workers compensation benefit and total claim value based on your state, average weekly wage, injury type, and time off work. Free and confidential.",
+  title: "Workers Compensation Calculator — How Much Will I Receive?",
+  description: "Calculate your weekly workers comp benefit and total claim value. Based on your state's published formula, your average weekly wage, and your time off work. Free, 2 minutes.",
 };
 
 const faqSchema = {
@@ -15,27 +16,27 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "How is workers compensation calculated?",
-      acceptedAnswer: { "@type": "Answer", text: "In most US states, your weekly workers compensation benefit is calculated as approximately two-thirds (66.7%) of your average weekly wage, up to a state-set maximum. Your average weekly wage is typically determined by dividing your total earnings over the 52 weeks prior to your injury by 52. Some states use different time windows or calculation methods." }
+      acceptedAnswer: { "@type": "Answer", text: "In most states, your weekly benefit is two-thirds of your average weekly wage, capped at a maximum the state sets and adjusts each year. Your average weekly wage is usually calculated from the 52 weeks before your injury. California's max in 2024 was $1,619.57 per week. Texas was $1,099. Earning above those thresholds means you get the cap, not two-thirds of your actual wage." }
     },
     {
       "@type": "Question",
-      name: "How long can I receive workers compensation benefits?",
-      acceptedAnswer: { "@type": "Answer", text: "Duration depends on the type and severity of your injury. Temporary Total Disability (TTD) benefits continue while you are completely unable to work, up to state limits ranging from 104 to 500 weeks. Permanent Total Disability can provide lifelong benefits in some states. Partial disability benefits apply if you can work but at reduced capacity." }
+      name: "How long can I collect workers compensation benefits?",
+      acceptedAnswer: { "@type": "Answer", text: "Temporary Total Disability pays while you cannot work at all. Most states allow it for 104 weeks, some up to 500. Once your doctor releases you to work — even modified duty — temporary benefits typically stop or reduce. If you have a lasting impairment, you may qualify for Permanent Partial or Permanent Total Disability benefits, which can last for years or for life depending on the state and the severity." }
     },
     {
       "@type": "Question",
-      name: "Does workers comp cover all medical bills?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. Workers compensation should cover 100% of all reasonable and necessary medical treatment related to your work injury — with no copays, deductibles, or out-of-pocket costs. This includes emergency care, surgery, hospitalization, physical therapy, prescription medications, and durable medical equipment." }
+      name: "Does workers comp cover all my medical bills?",
+      acceptedAnswer: { "@type": "Answer", text: "Yes — 100 percent, with no deductibles or copays, for treatment that is reasonable, necessary, and related to your work injury. That covers emergency care, surgery, hospitalization, physical therapy, prescriptions, and most durable medical equipment. Your employer's insurer controls which doctors you can see in most states, at least initially." }
     },
     {
       "@type": "Question",
-      name: "Can I be fired for filing a workers compensation claim?",
-      acceptedAnswer: { "@type": "Answer", text: "It is illegal under the laws of all US states for an employer to fire, demote, or retaliate against an employee for filing a legitimate workers compensation claim. If you believe you have been retaliated against, you may have a separate legal claim against your employer in addition to your workers comp claim." }
+      name: "Can my employer fire me for filing a workers comp claim?",
+      acceptedAnswer: { "@type": "Answer", text: "No. Retaliating against an employee for filing a legitimate workers comp claim is illegal in all 50 states. If you are fired, demoted, or have hours cut after filing, that may be a separate wrongful termination or retaliation claim on top of your workers comp case." }
     },
     {
       "@type": "Question",
-      name: "What if my workers comp claim is denied?",
-      acceptedAnswer: { "@type": "Answer", text: "A denial is not the end of your claim. Every state has an appeal process. You typically have 30–90 days to appeal a denial, and you can request a hearing before a workers compensation judge. An experienced workers comp attorney can significantly improve your chances on appeal — most work on contingency, meaning no upfront cost to you." }
+      name: "What do I do if my workers comp claim is denied?",
+      acceptedAnswer: { "@type": "Answer", text: "Appeal it. Every state has a formal appeals process, usually starting with a request for reconsideration or a hearing before a workers compensation judge. Deadlines are short — typically 30 to 90 days from the denial notice. A workers comp attorney can file the appeal for you at no upfront cost since they work on contingency." }
     },
   ],
 };
@@ -45,61 +46,81 @@ export default function WorkersCompPage() {
     <>
       <TrustBar />
 
-      <section style={{ background: "var(--navy)" }} className="py-12 px-4">
+      <section style={{ background: "var(--navy)" }} className="py-12 px-5">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="section-label">
-            Benefit Calculator
-          </div>
+          <div className="section-label">Benefit Calculator</div>
           <h1 className="text-white font-display text-3xl md:text-4xl font-bold mb-4">
-            Workers Compensation Benefit Estimator
+            How Much Workers Comp Will I Receive?
           </h1>
-          <p className="text-white/70 text-base leading-relaxed">
-            Estimate your weekly benefit amount and total claim value based on your wage, injury, and state. No sign-up required.
+          <p className="text-base leading-relaxed" style={{ color: "rgba(255,255,255,0.68)" }}>
+            Enter your state, average weekly wage, and time off work to see your estimated
+            weekly benefit and total claim value — based on your state's actual formula.
           </p>
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-4 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto px-5 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1 order-2 lg:order-1">
           <AdUnit slot="3002000001" format="sidebar" className="sticky top-24" />
+          <div className="mt-6 p-5 rounded-xl" style={{ background: "var(--off-white)", border: "1px solid var(--gray-100)" }}>
+            <h3 className="font-semibold text-sm mb-3" style={{ color: "var(--navy)", fontFamily: "inherit" }}>Other tools</h3>
+            <ul className="space-y-2 text-sm">
+              <li><Link href="/car-accident-calculator" style={{ color: "var(--gold)" }}>Car Accident Calculator &rarr;</Link></li>
+              <li><Link href="/mesothelioma-eligibility" style={{ color: "var(--gold)" }}>Mesothelioma Eligibility &rarr;</Link></li>
+            </ul>
+          </div>
         </div>
         <div className="lg:col-span-2 order-1 lg:order-2">
           <WorkersCompQuiz />
         </div>
       </div>
 
-      <section className="max-w-3xl mx-auto px-4 pb-16">
+      <section className="max-w-3xl mx-auto px-5 pb-16">
         <hr className="section-divider" />
 
-        <h2 className="text-2xl font-bold mb-6">How Workers Compensation Benefits Are Calculated</h2>
-        <p className="leading-relaxed mb-4" style={{ color: "var(--gray-500)" }}>
-          Workers compensation is a no-fault insurance system that provides wage replacement and medical benefits to employees injured on the job. Unlike personal injury lawsuits, you do not need to prove your employer was negligent — only that the injury occurred in the course of your employment.
+        <h2 className="text-2xl font-bold mb-5">How Workers Compensation Benefits Are Calculated</h2>
+        <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
+          Workers compensation is a no-fault system — you don't have to prove your employer
+          was negligent, only that the injury happened at work or because of work. In exchange,
+          you generally cannot sue your employer directly for the injury. The trade-off is speed
+          and certainty over the larger potential recovery of a lawsuit.
         </p>
-        <p className="leading-relaxed mb-4" style={{ color: "var(--gray-500)" }}>
-          The core calculation for most states is straightforward: <strong style={{ color: "var(--gray-700)" }}>weekly benefit = average weekly wage × 0.667</strong>. This two-thirds wage replacement rate is designed to partially compensate for lost income while providing an incentive to return to work when medically able.
+        <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
+          The weekly benefit formula is the same across most states:{" "}
+          <strong style={{ color: "var(--gray-800)" }}>two-thirds of your average weekly wage,
+          up to your state's maximum</strong>. The cap is what catches people off guard. In
+          California, the 2024 maximum for temporary total disability was $1,619.57 per week.
+          In Texas it was $1,099. If you earn more than roughly $2,400 a week in California,
+          you hit the cap and your benefit stops growing regardless of your actual salary.
         </p>
-        <p className="leading-relaxed mb-4" style={{ color: "var(--gray-500)" }}>
-          However, every state caps the maximum weekly benefit. In California, the maximum for temporary total disability in 2024 was $1,619.57 per week. In Texas, it was $1,099. These caps mean that higher-wage earners often receive less than two-thirds of their actual salary. Some states also set a minimum weekly benefit to protect lower-wage workers.
+        <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
+          Your average weekly wage is typically calculated from the 52 weeks before your injury
+          date. Overtime, tips, and bonuses may or may not count depending on your state.
+          If you worked a second job, those earnings might be included too.
         </p>
-        <p className="leading-relaxed mb-4" style={{ color: "var(--gray-500)" }}>
-          Beyond wage replacement, workers comp covers 100% of medical treatment costs, vocational rehabilitation if you cannot return to your previous job, and permanent disability benefits if your injury leaves lasting functional limitations. A permanent partial disability rating by a physician translates directly into a dollar amount under each state's schedule of injuries.
+        <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
+          Beyond wage replacement, workers comp covers 100 percent of your medical treatment
+          with no out-of-pocket costs — emergency care, surgery, physical therapy, medications,
+          and medical equipment. If your injury leaves a permanent impairment, a physician
+          assigns a disability rating that translates directly into additional compensation
+          under your state's schedule of injuries.
         </p>
 
-        <h3 className="text-xl font-bold mb-4 mt-8">Factors That Affect Your Workers Comp Claim Value</h3>
+        <h3 className="text-xl font-bold mb-4 mt-8">What Affects Your Workers Comp Benefit</h3>
         <ul className="space-y-3 mb-8">
           {[
-            ["Your average weekly wage", "Calculated from earnings in the 52 weeks before injury. Overtime, bonuses, and tips may or may not be included depending on your state."],
-            ["The state where you work", "Each state administers its own workers comp system with different benefit rates, caps, and duration limits."],
-            ["Injury type and body part affected", "States use 'schedules' that assign a fixed number of compensable weeks to injuries to specific body parts — a lost finger has a different value than a knee injury."],
-            ["Permanent vs. temporary disability", "Temporary benefits end when you recover or reach maximum medical improvement. Permanent disability may result in a lump-sum settlement or ongoing payments."],
-            ["Your employer's dispute of the claim", "If your employer or their insurer disputes liability, the process becomes adversarial and attorney representation becomes more critical."],
-            ["Return-to-work status", "If your employer offers modified duty within your restrictions, your wage replacement benefits may be reduced or suspended."],
+            ["Your average weekly wage", "Calculated from the 52 weeks before injury. Higher earners hit the state cap and stop seeing their benefit grow above it."],
+            ["Your state", "Caps vary by hundreds of dollars a week. California's 2024 max was $1,619. Texas was $1,099. Illinois was $1,897. Your state matters more than any other single factor."],
+            ["Temporary vs. permanent disability", "Temporary benefits end when you return to work or reach maximum medical improvement. Permanent impairment ratings lead to either a lump sum or ongoing scheduled benefits."],
+            ["Injury type and body part", "States use schedules that assign a specific number of compensable weeks to injuries affecting specific body parts. Losing a finger has a different value than a knee injury."],
+            ["Return-to-work offers", "If your employer offers modified duty within your medical restrictions, refusing it may reduce or suspend your wage replacement benefits even if you can't do your original job."],
+            ["Whether your claim is disputed", "If your employer's insurer questions whether the injury is work-related, or whether your treatment is necessary, the process becomes adversarial and an attorney becomes more important."],
           ].map(([title, body]) => (
             <li key={title as string} className="flex gap-3">
               <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2.5" style={{ background: "var(--gold)" }} />
               <div>
-                <strong style={{ color: "var(--gray-700)" }}>{title}:</strong>{" "}
-                <span style={{ color: "var(--gray-500)" }}>{body}</span>
+                <strong style={{ color: "var(--gray-800)" }}>{title}:</strong>{" "}
+                <span style={{ color: "var(--gray-600)" }}>{body}</span>
               </div>
             </li>
           ))}
@@ -109,28 +130,28 @@ export default function WorkersCompPage() {
           <AdUnit slot="3002000002" format="rectangle" />
         </div>
 
-        <h3 className="text-xl font-bold mb-6 mt-2">Frequently Asked Questions</h3>
+        <h3 className="text-xl font-bold mb-5 mt-2">Frequently Asked Questions</h3>
         <div className="space-y-1">
           {[
             {
               q: "How is workers compensation calculated?",
-              a: "In most US states, your weekly workers compensation benefit is approximately two-thirds (66.7%) of your average weekly wage, up to a state-set maximum. Your average weekly wage is typically determined by dividing your total earnings over the 52 weeks prior to injury by 52.",
+              a: "Two-thirds of your average weekly wage, capped at your state's published maximum. California's 2024 cap was $1,619.57. Texas was $1,099. Illinois was $1,897. Your average weekly wage comes from the 52 weeks before your injury.",
             },
             {
-              q: "How long can I receive workers compensation benefits?",
-              a: "Duration depends on injury severity. Temporary Total Disability (TTD) benefits continue while you cannot work, up to state limits ranging from 104 to 500 weeks. Permanent Total Disability can provide lifelong benefits in some states. Partial disability applies if you can work at reduced capacity.",
+              q: "How long can I collect workers compensation benefits?",
+              a: "Temporary Total Disability pays while you can't work at all — typically up to 104 weeks, sometimes 500. Permanent impairment qualifies you for additional benefits based on a disability rating. Some Permanent Total Disability awards last for life.",
             },
             {
-              q: "Does workers comp cover all medical bills?",
-              a: "Yes. Workers compensation covers 100% of all reasonable and necessary medical treatment related to your work injury — no copays, deductibles, or out-of-pocket costs. This includes emergency care, surgery, hospitalization, physical therapy, prescriptions, and medical equipment.",
+              q: "Does workers comp cover all my medical bills?",
+              a: "Yes, 100 percent of reasonable and necessary treatment — no deductibles, no copays. Emergency care, surgery, physical therapy, prescriptions, and most medical equipment are all covered. Your employer's insurer typically controls which doctors you use initially.",
             },
             {
-              q: "Can I be fired for filing a workers compensation claim?",
-              a: "It is illegal in all US states to fire, demote, or retaliate against an employee for filing a legitimate workers compensation claim. If you believe you have been retaliated against, you may have a separate legal claim against your employer.",
+              q: "Can my employer fire me for filing a workers comp claim?",
+              a: "No. Retaliation for filing a workers comp claim is illegal in all 50 states. If your hours, role, or employment changes after you file, that may be a separate wrongful termination or retaliation claim.",
             },
             {
-              q: "What if my workers comp claim is denied?",
-              a: "A denial is not final. Every state has an appeal process. You typically have 30–90 days to appeal, and can request a hearing before a workers compensation judge. An experienced attorney can significantly improve your chances on appeal — most work on contingency with no upfront cost.",
+              q: "What do I do if my workers comp claim is denied?",
+              a: "Appeal immediately. Deadlines are usually 30 to 90 days from the denial. You have the right to a hearing before a workers compensation judge. An attorney can file the appeal at no upfront cost — they work on contingency.",
             },
           ].map((item) => (
             <details key={item.q} className="faq-item">
@@ -145,15 +166,12 @@ export default function WorkersCompPage() {
           ))}
         </div>
 
-        <div className="mt-8 p-4 rounded-lg text-sm" style={{ background: "var(--gray-50)", border: "1px solid var(--gray-100)", color: "var(--gray-500)" }}>
-          <strong style={{ color: "var(--gray-700)" }}>Disclaimer:</strong> Benefit estimates are based on widely used state formulas and are for informational purposes only. Actual benefits depend on your state's specific rules, your employer's insurance carrier, and the outcome of any disputes. Consult a licensed workers compensation attorney for advice on your specific claim.
+        <div className="mt-8 p-4 rounded-lg text-sm" style={{ background: "var(--off-white)", border: "1px solid var(--gray-100)", color: "var(--gray-600)" }}>
+          <strong style={{ color: "var(--gray-800)" }}>Disclaimer:</strong> Benefit estimates are based on each state's published formula and are for informational purposes only. Actual benefits depend on your state's specific rules, your employer's insurance carrier, claim disputes, and other factors. Consult a licensed workers compensation attorney for advice on your specific situation.
         </div>
       </section>
 
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     </>
   );
 }

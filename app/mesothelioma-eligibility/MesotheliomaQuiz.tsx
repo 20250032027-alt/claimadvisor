@@ -60,19 +60,19 @@ export default function MesotheliomaQuiz() {
     const resultData = {
       strong: {
         label: "Strong Eligibility Indicated",
-        desc: "Based on your answers, your situation strongly aligns with the criteria attorneys use to evaluate mesothelioma and asbestos-related compensation claims. A confirmed or suspected diagnosis combined with documented occupational exposure is precisely the profile for which asbestos trust funds and lawsuits are designed.",
-        action: "Speak with a Mesothelioma Specialist Now",
+        desc: "Occupational exposure plus a diagnosis is what asbestos trust funds and personal injury lawsuits were built for. An attorney who handles these cases can identify which manufacturers' trusts apply to your work history — often more than one — and file claims against each. Most take these cases on contingency with no upfront cost.",
+        action: "Get a Free Case Review",
         cls: "result-strong",
       },
       moderate: {
-        label: "Moderate Eligibility — Consultation Recommended",
-        desc: "Your answers suggest possible eligibility, but additional information is needed to determine whether a claim is viable. Attorneys who specialize in asbestos cases offer free consultations and can review your work history, medical records, and exposure details at no cost or obligation to you.",
-        action: "Get a Free Eligibility Consultation",
+        label: "Possible Eligibility — Worth a Consultation",
+        desc: "Your answers don't hit every factor, but that doesn't rule out a claim. Asbestos exposure history is complicated — attorneys who work these cases have detailed databases of what products were used in which job sites and industries. A free consultation costs you nothing and gives you a real answer.",
+        action: "Get a Free Consultation",
         cls: "result-moderate",
       },
       unlikely: {
-        label: "Eligibility Is Unclear At This Time",
-        desc: "Based on your answers, the clearest eligibility factors — occupational exposure and a confirmed diagnosis — are not strongly present. This does not necessarily mean you have no claim. If you believe you were exposed to asbestos, a free attorney consultation can review your history in more detail.",
+        label: "Eligibility Is Unclear",
+        desc: "The two strongest factors — occupational exposure and a confirmed diagnosis — aren't clearly present. That said, secondary exposure (a family member who worked around asbestos) and environmental exposure are both compensable in some cases. If you have any reason to suspect exposure, a free attorney consultation is still worth the call.",
         action: "Discuss Your History with an Attorney",
         cls: "result-unlikely",
       },
@@ -92,8 +92,8 @@ export default function MesotheliomaQuiz() {
           <p className="text-sm leading-relaxed opacity-90">{resultData.desc}</p>
         </div>
 
-        <div className="rounded-lg p-4 mb-6 text-sm" style={{ background: "var(--gold-pale)", border: "1px solid var(--gold)", color: "var(--navy)" }}>
-          <strong>Time matters in mesothelioma cases.</strong> Statutes of limitations in most states run 1–3 years from diagnosis. If you or a family member has been diagnosed, consulting an attorney as soon as possible preserves your legal options.
+        <div className="rounded-lg p-4 mb-6 text-sm font-medium" style={{ background: "var(--gold-pale)", border: "1px solid var(--gold)", color: "var(--navy)" }}>
+          Statutes of limitations for mesothelioma claims are typically 1–3 years from diagnosis, depending on the state. If there's a diagnosis in the picture, the clock is already running.
         </div>
 
         <div className="mb-6"><DisclaimerBox /></div>
