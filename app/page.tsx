@@ -19,17 +19,28 @@ const tools = [
     accent: "#0B3D91",
     accentBg: "rgba(11,61,145,0.07)",
     icon: (
-      <img
-        src="/car.png"
-        alt=""
-        aria-hidden="true"
-        width={28}
-        height={28}
-        style={{
-          filter: "brightness(0) saturate(100%) invert(17%) sepia(72%) saturate(700%) hue-rotate(200deg) brightness(95%)",
-          objectFit: "contain",
-        }}
-      />
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        {/* Car body outline - matches car__1_.png style: rounded profile, side view */}
+        <path
+          d="M3 17.5C3 16.7 3.5 16 4.3 15.8L7.5 10.5C8 9.6 9 9 10 9h8c1 0 2 .6 2.5 1.5l3 5.3c.8.2 1.5.9 1.5 1.7v1.5a1.5 1.5 0 01-1.5 1.5H22a3.5 3.5 0 01-7 0H13a3.5 3.5 0 01-7 0H4.5A1.5 1.5 0 013 19v-1.5z"
+          stroke="#0B3D91"
+          strokeWidth="1.6"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        {/* Front wheel */}
+        <circle cx="9.5" cy="21" r="2" stroke="#0B3D91" strokeWidth="1.6"/>
+        {/* Rear wheel */}
+        <circle cx="18.5" cy="21" r="2" stroke="#0B3D91" strokeWidth="1.6"/>
+        {/* Window */}
+        <path
+          d="M10.5 9.5l-2 5h9l-2-5h-5z"
+          stroke="#0B3D91"
+          strokeWidth="1.3"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
     ),
   },
   {
@@ -97,52 +108,81 @@ export default function Home() {
     <>
       <TrustBar />
 
-      {/* Hero */}
+      {/* Hero — left-aligned split layout (taste-skill Rule 3: anti-center bias) */}
       <section
         style={{
           background: "linear-gradient(160deg, var(--navy-dark) 0%, var(--navy) 60%, var(--navy-light) 100%)",
         }}
-        className="relative overflow-hidden py-24 px-5"
+        className="relative overflow-hidden py-20 px-5"
       >
         <div
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 70% 40%, rgba(200,151,58,0.08) 0%, transparent 60%), radial-gradient(circle at 20% 80%, rgba(18,45,84,0.6) 0%, transparent 50%)",
+              "radial-gradient(circle at 75% 35%, rgba(200,151,58,0.09) 0%, transparent 55%), radial-gradient(circle at 15% 85%, rgba(18,45,84,0.5) 0%, transparent 50%)",
           }}
         />
-        <div className="relative max-w-4xl mx-auto text-center">
-          <div className="section-label">Free Legal Estimation Tools</div>
-          <h1
-            className="font-display text-white mb-6 leading-tight"
-            style={{ fontSize: "clamp(2rem, 5vw, 3.25rem)", fontWeight: 700 }}
-          >
-            Find Out What Your
-            <br />
-            <em style={{ color: "var(--gold-light)", fontStyle: "italic" }}>
-              Legal Claim May Be Worth
-            </em>
-          </h1>
-          <p
-            className="mx-auto mb-10 text-lg leading-relaxed"
-            style={{ color: "rgba(255,255,255,0.68)", maxWidth: "560px" }}
-          >
-            Free calculators for car accident settlements, workers compensation benefits,
-            and mesothelioma eligibility. Built on real legal formulas.
-            No personal information required.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/car-accident-calculator" className="btn-primary">
-              Start My Claim Check
-            </Link>
-            <Link href="/about" className="btn-ghost-white">
-              How It Works
-            </Link>
+        <div className="relative max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          {/* Left: content */}
+          <div>
+            <div className="section-label mb-4">Free Legal Estimation Tools</div>
+            <h1
+              className="font-display text-white mb-6 leading-tight"
+              style={{ fontSize: "clamp(2rem, 4.5vw, 3.25rem)", fontWeight: 700 }}
+            >
+              Find Out What Your
+              <br />
+              <em style={{ color: "var(--gold-light)", fontStyle: "italic" }}>
+                Legal Claim May Be Worth
+              </em>
+            </h1>
+            <p
+              className="mb-8 text-lg leading-relaxed"
+              style={{ color: "rgba(255,255,255,0.68)", maxWidth: "480px" }}
+            >
+              Free calculators for car accident settlements, workers compensation benefits,
+              and mesothelioma eligibility. Built on real legal formulas.
+              No personal information required.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/car-accident-calculator" className="btn-primary">
+                Start My Claim Check
+              </Link>
+              <Link href="/about" className="btn-ghost-white">
+                How It Works
+              </Link>
+            </div>
+            <p className="mt-5 text-sm" style={{ color: "rgba(255,255,255,0.38)" }}>
+              Used by thousands of US residents to understand their legal options before speaking with an attorney.
+            </p>
           </div>
-          <p className="mt-6 text-sm" style={{ color: "rgba(255,255,255,0.4)" }}>
-            Used by thousands of US residents to understand their legal options before speaking with an attorney.
-          </p>
+
+          {/* Right: stat cards */}
+          <div className="hidden md:grid grid-cols-2 gap-4">
+            {[
+              { value: "$52B+", label: "In asbestos trust funds", sub: "available now" },
+              { value: "66.7%", label: "Wage replacement", sub: "in most states" },
+              { value: "$20K–$100K", label: "Typical auto settlement", sub: "range" },
+              { value: "3 min", label: "To complete", sub: "any tool" },
+            ].map((s) => (
+              <div
+                key={s.value}
+                className="rounded-xl p-5"
+                style={{
+                  background: "rgba(255,255,255,0.06)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  backdropFilter: "blur(8px)",
+                }}
+              >
+                <div className="font-display text-2xl font-bold mb-1" style={{ color: "var(--gold-light)" }}>
+                  {s.value}
+                </div>
+                <div className="text-xs font-medium" style={{ color: "rgba(255,255,255,0.7)" }}>{s.label}</div>
+                <div className="text-xs" style={{ color: "rgba(255,255,255,0.4)" }}>{s.sub}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

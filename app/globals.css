@@ -270,3 +270,65 @@ h1, h2, h3, h4 {
   border-color: var(--navy);
   box-shadow: 0 0 0 3px rgba(11,31,58,0.08);
 }
+
+/* ── Taste-skill: Tactile button active states ──────────── */
+.btn-primary:active  { transform: translateY(1px) scale(0.98); box-shadow: none; }
+.btn-secondary:active { transform: translateY(1px) scale(0.98); }
+.option-btn:active    { transform: scale(0.99); }
+
+/* ── Taste-skill: Touch target enforcement (44x44px min) ── */
+.btn-primary, .btn-secondary, .btn-ghost-white {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* ── UI-UX Pro Max: prefers-reduced-motion ─────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .progress-bar-fill {
+    transition: none !important;
+  }
+}
+
+/* ── Taste-skill: Tinted card shadows (hued to bg) ─────── */
+.card {
+  box-shadow: 0 4px 12px rgba(11, 31, 58, 0.10);
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(11, 31, 58, 0.14);
+}
+
+/* ── UI-UX Pro Max: Focus ring visibility ───────────────── */
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ── UI-UX Pro Max: Skip-to-content link ───────────────── */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  background: var(--gold);
+  color: var(--navy-dark);
+  padding: 0.5rem 1rem;
+  border-radius: 0 0 6px 6px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  z-index: 9999;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ── Taste-skill: Hardware-accelerated transitions only ─── */
+.card, .btn-primary, .btn-secondary, .option-btn {
+  will-change: transform;
+}
