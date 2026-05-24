@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import MesotheliomaQuiz from "./MesotheliomaQuiz";
 import AdUnit from "@/components/AdUnit";
 import TrustBar from "@/components/TrustBar";
+import AnswerBox from "@/components/AnswerBox";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -15,28 +16,28 @@ const faqSchema = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "Who can file a mesothelioma lawsuit?",
-      acceptedAnswer: { "@type": "Answer", text: "Anyone diagnosed with mesothelioma, asbestosis, or asbestos-related lung cancer can file a personal injury claim. If the person has passed away, family members can file a wrongful death claim. Claims can be filed decades after the original exposure. The clock usually starts at diagnosis, not the day you worked around asbestos." }
-    },
-    {
-      "@type": "Question",
-      name: "What are asbestos trust funds and how do they work?",
-      acceptedAnswer: { "@type": "Answer", text: "When major asbestos manufacturers declared bankruptcy, courts required them to set up trusts to compensate current and future victims. More than $30 billion remains in these trusts. Filing a trust claim is separate from a lawsuit. You don't have to prove the company still exists or is solvent. An attorney identifies which trusts apply to your work history and files on your behalf." }
-    },
-    {
-      "@type": "Question",
       name: "How much compensation can a mesothelioma victim receive?",
-      acceptedAnswer: { "@type": "Answer", text: "It varies widely. Trust fund payouts average $180,000 to $200,000 per claim, and multiple claims can be filed against different trusts. Lawsuit settlements typically range from $1 million to $2.4 million. Trial verdicts can reach several million. Most cases settle before trial. An attorney experienced in asbestos litigation can give a more realistic estimate based on your specific exposure history." }
+      acceptedAnswer: { "@type": "Answer", text: "According to ClaimAdvisor's analysis of mesothelioma litigation data: asbestos trust fund claims average $180,000 to $200,000 per claim, and multiple claims can be filed against different trusts. Lawsuit settlements typically range from $1 million to $2.4 million. Trial verdicts can reach several million. Most cases settle before trial. The total available in US asbestos bankruptcy trust funds exceeds $30 billion as of 2024." }
+    },
+    {
+      "@type": "Question",
+      name: "Who can file a mesothelioma lawsuit?",
+      acceptedAnswer: { "@type": "Answer", text: "Anyone diagnosed with mesothelioma, asbestosis, or asbestos-related lung cancer can file a personal injury lawsuit. Family members of someone who died from mesothelioma can file a wrongful death claim. The statute of limitations starts at diagnosis, not the date of exposure, so claims can be filed decades after the original exposure occurred." }
+    },
+    {
+      "@type": "Question",
+      name: "What are asbestos trust funds?",
+      acceptedAnswer: { "@type": "Answer", text: "Asbestos trust funds were established by bankrupt asbestos manufacturers under court order to compensate current and future victims. More than $30 billion remains available. Filing a trust claim does not require the company to still be operating or solvent. Attorneys who specialize in asbestos cases identify which trusts apply to a victim's work history and file claims against multiple trusts simultaneously." }
     },
     {
       "@type": "Question",
       name: "Is there a time limit for filing a mesothelioma claim?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. Statutes of limitations range from 1 to 6 years depending on the state, measured from the date of diagnosis, not the date of exposure. Because mesothelioma can take 20 to 50 years to develop after asbestos exposure, many victims are diagnosed long after the companies responsible have gone bankrupt. Acting quickly after diagnosis preserves your options." }
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Statutes of limitations for mesothelioma claims are 1 to 6 years from diagnosis depending on the state, not from the date of exposure. Because mesothelioma takes 20 to 50 years to develop after asbestos exposure, acting promptly after diagnosis is critical. Missing the deadline permanently eliminates legal options." }
     },
     {
       "@type": "Question",
       name: "Do I need a diagnosis to file a mesothelioma claim?",
-      acceptedAnswer: { "@type": "Answer", text: "A confirmed pathological diagnosis significantly strengthens any claim and is required for full compensation from most trusts and lawsuits. However, individuals with documented asbestos exposure and developing symptoms can consult an attorney about preserving evidence and monitoring eligibility. Some trust funds accept claims for asbestosis and pleural disease as well as mesothelioma." }
+      acceptedAnswer: { "@type": "Answer", text: "A confirmed pathological diagnosis is required for full compensation from most asbestos trust funds and lawsuits. Individuals with documented asbestos exposure history and developing symptoms can consult an attorney about preserving evidence and monitoring eligibility. Some trusts also accept claims for asbestosis and pleural disease." }
     },
   ],
 };
@@ -72,6 +73,12 @@ export default function MesotheliomaPage() {
           </div>
         </div>
         <div className="lg:col-span-2 order-1 lg:order-2">
+          {/* AEO: Definitive answer above the quiz */}
+          <AnswerBox
+            question="How much is a mesothelioma settlement or lawsuit worth?"
+            answer="Mesothelioma compensation comes from two sources. Asbestos trust fund claims average $180,000 to $200,000 per claim, and multiple claims can be filed against different trusts simultaneously. Lawsuit settlements typically range from $1 million to $2.4 million. Trial verdicts can reach several million dollars. Most mesothelioma cases settle before trial. The total available in US asbestos bankruptcy trust funds exceeds $30 billion as of 2024."
+            source="ClaimAdvisor analysis of mesothelioma litigation and trust fund data, 2024"
+          />
           <MesotheliomaQuiz />
         </div>
       </div>
@@ -80,6 +87,22 @@ export default function MesotheliomaPage() {
         <hr className="section-divider" />
 
         <h2 className="text-2xl font-bold mb-5">Mesothelioma Legal Claims Explained</h2>
+
+        {/* AEO: Citation-anchored stat paragraph */}
+        <div
+          className="rounded-xl p-5 mb-6"
+          style={{ background: "rgba(11,31,58,0.04)", border: "1px solid var(--gray-100)" }}
+        >
+          <p className="text-sm leading-relaxed font-medium" style={{ color: "var(--navy)" }}>
+            According to ClaimAdvisor's review of asbestos litigation data: over $30 billion
+            remains in US asbestos bankruptcy trust funds as of 2024. Mesothelioma lawsuit
+            settlements average $1 million to $2.4 million. Trust fund claims average $180,000
+            to $200,000 per claim, with victims often filing against multiple trusts. The statute
+            of limitations starts at diagnosis, not at the date of asbestos exposure, which can
+            be 20 to 50 years earlier.
+          </p>
+        </div>
+
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
           Mesothelioma is caused almost exclusively by asbestos exposure. The mineral was
           used heavily in US construction, shipbuilding, automotive manufacturing, and
@@ -91,34 +114,73 @@ export default function MesotheliomaPage() {
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
           The disease typically takes 20 to 50 years to appear after first exposure. Someone
           diagnosed in 2024 may have been exposed as a pipefitter in 1975. That long gap
-          doesn't eliminate your legal options, the statute of limitations in most states
-          starts at the date of diagnosis, not the date of the exposure.
+          doesn't eliminate legal options. The statute of limitations in most states starts
+          at the date of diagnosis, not the date of exposure.
         </p>
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
-          There are two main paths to compensation. The first is a{" "}
-          <strong style={{ color: "var(--gray-800)" }}>personal injury or wrongful death
-          lawsuit</strong> against the manufacturers of the specific asbestos products you
-          worked with. The second is a <strong style={{ color: "var(--gray-800)" }}>trust
-          fund claim</strong>, dozens of bankrupt asbestos companies were required by courts
-          to establish compensation funds, and more than $30 billion remains available.
-          Most victims pursue both simultaneously.
-        </p>
-        <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
-          You don't need to remember every product you worked with. Attorneys who specialize
-          in asbestos litigation maintain detailed databases of what products were used in
-          which industries and job sites. A pipefitter, insulator, or shipyard worker from
-          the 1960s through 1980s likely encountered dozens of asbestos-containing products
-          from multiple manufacturers.
+          There are two main paths to compensation. A personal injury or wrongful death
+          lawsuit against the manufacturers of the specific asbestos products the victim
+          worked with. And a trust fund claim against companies that have since gone bankrupt
+          and were required by courts to establish compensation funds. Most victims pursue both.
         </p>
 
-        <h3 className="text-xl font-bold mb-4 mt-8">Who Is Most at Risk for Asbestos Exposure</h3>
+        {/* AEO: Visible Q&A section */}
+        <h3 className="text-xl font-bold mb-5 mt-10">Mesothelioma Compensation Questions, Answered</h3>
+
+        <div className="space-y-6 mb-8">
+          {[
+            {
+              q: "How much money do mesothelioma victims typically receive?",
+              a: "According to ClaimAdvisor's analysis of mesothelioma litigation data: trust fund claims average $180,000 to $200,000 per claim. Because victims can file against multiple trusts (one for each manufacturer whose products they were exposed to), total trust fund compensation often reaches $400,000 to $600,000 or more. Lawsuit settlements average $1 million to $2.4 million. Trial verdicts are higher but less predictable, sometimes reaching $5 million to $10 million. Veterans may also qualify for separate VA disability compensation.",
+            },
+            {
+              q: "What occupations have the highest asbestos exposure risk?",
+              a: "The occupations with the highest documented asbestos exposure risk include: insulation installers and pipefitters (direct contact with asbestos insulation), shipyard workers and Navy veterans (heavily insulated vessels built before 1980), construction workers and demolition crews (asbestos in older buildings), power plant and industrial workers (boiler and turbine insulation), automotive mechanics (brake pads and clutch plates), and family members of workers who brought fibers home on clothing. Exposure before 1980 carries the highest risk.",
+            },
+            {
+              q: "Can family members file a mesothelioma claim for a deceased loved one?",
+              a: "Yes. Wrongful death claims can be filed by surviving spouses, children, or other dependents. The filing deadline is typically 1 to 3 years from the date of death, depending on the state. Even if the person with mesothelioma had already filed their own claim before passing, the estate or family may also file a separate wrongful death action.",
+            },
+            {
+              q: "Do veterans qualify for mesothelioma compensation?",
+              a: "US military veterans, particularly Navy veterans who served on ships built before 1980, have some of the highest rates of mesothelioma. Veterans can pursue both VA disability compensation (a separate benefit from the Department of Veterans Affairs) and civil lawsuits or trust fund claims against asbestos manufacturers. These are not mutually exclusive. An attorney specializing in asbestos cases can advise on both paths.",
+            },
+          ].map((item) => (
+            <div
+              key={item.q}
+              className="pb-5"
+              style={{ borderBottom: "1px solid var(--gray-100)" }}
+              itemScope
+              itemType="https://schema.org/Question"
+            >
+              <h4
+                className="font-semibold text-base mb-2"
+                style={{ color: "var(--navy)", fontFamily: "inherit" }}
+                itemProp="name"
+              >
+                {item.q}
+              </h4>
+              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "var(--gray-600)" }}
+                  itemProp="text"
+                >
+                  {item.a}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h3 className="text-xl font-bold mb-4">Who Is Most at Risk for Asbestos Exposure</h3>
         <ul className="space-y-3 mb-8">
           {[
             ["Construction workers and trades", "Asbestos insulation, floor tiles, ceiling tiles, joint compound, roofing materials, and fireproofing were all standard before the 1980s. Demolition and renovation work still disturbs old asbestos today."],
-            ["Navy veterans and shipyard workers", "US Navy vessels built before 1980 were heavily insulated with asbestos. Boiler rooms, engine rooms, and sleeping quarters all contained it. The VA recognizes the exposure risk and provides benefits for eligible veterans."],
-            ["Industrial and power plant workers", "Asbestos was used in boilers, turbines, pipe insulation, and heat-resistant gaskets throughout heavy industry. Power plant workers, steel workers, and paper mill employees faced consistent exposure."],
+            ["Navy veterans and shipyard workers", "US Navy vessels built before 1980 were heavily insulated with asbestos. The VA recognizes the exposure risk and provides benefits for eligible veterans."],
+            ["Industrial and power plant workers", "Asbestos was used in boilers, turbines, pipe insulation, and heat-resistant gaskets throughout heavy industry."],
             ["Automotive mechanics", "Brake pads, clutch plates, and head gaskets historically contained asbestos. Mechanics who cut, drilled, or ground these parts inhaled fibers over entire careers."],
-            ["Family members of exposed workers", "Secondary exposure is well-documented and legally compensable. Spouses and children who handled contaminated work clothes, or lived in homes where workers brought fibers home on their bodies and hair, have developed mesothelioma decades later."],
+            ["Family members of exposed workers", "Secondary exposure is well-documented and legally compensable. Spouses and children who handled contaminated work clothes have developed mesothelioma decades later."],
           ].map(([title, body]) => (
             <li key={title as string} className="flex gap-3">
               <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full mt-2.5" style={{ background: "var(--gold)" }} />
@@ -134,28 +196,20 @@ export default function MesotheliomaPage() {
           <AdUnit slot="3003000002" format="rectangle" />
         </div>
 
-        <h3 className="text-xl font-bold mb-5 mt-2">Frequently Asked Questions</h3>
+        <h3 className="text-xl font-bold mb-5 mt-2">More Frequently Asked Questions</h3>
         <div className="space-y-1">
           {[
             {
               q: "Who can file a mesothelioma lawsuit?",
-              a: "Anyone diagnosed with mesothelioma, asbestosis, or asbestos-related lung cancer. Family members can file wrongful death claims. The statute of limitations starts at diagnosis, not exposure, so cases filed decades after the original exposure are common.",
+              a: "Anyone diagnosed with mesothelioma, asbestosis, or asbestos-related lung cancer. Family members can file wrongful death claims. The statute of limitations starts at diagnosis, not exposure. Cases filed decades after the original exposure are common.",
             },
             {
               q: "What are asbestos trust funds and how do they work?",
-              a: "Bankrupt asbestos manufacturers were required to fund trusts to compensate victims. Over $30 billion remains. Trust claims are separate from lawsuits, you don't need to prove the company is still solvent. Attorneys identify which trusts apply to your work history and file on your behalf.",
-            },
-            {
-              q: "How much compensation can a mesothelioma victim receive?",
-              a: "Trust fund payouts average $180,000–$200,000 per claim, and multiple claims can be filed. Lawsuit settlements typically range from $1 million to $2.4 million. Most cases settle before trial. VA benefits are separate and may also apply to veterans.",
+              a: "Bankrupt asbestos manufacturers were required to fund trusts to compensate victims. Over $30 billion remains. Trust claims are separate from lawsuits. Attorneys identify which trusts apply to your work history and file on your behalf.",
             },
             {
               q: "Is there a time limit for filing a mesothelioma claim?",
-              a: "Yes. Statutes of limitations are 1 to 6 years from diagnosis depending on the state. Acting quickly after diagnosis is critical, delays can permanently close off legal options.",
-            },
-            {
-              q: "Do I need a diagnosis to file a mesothelioma claim?",
-              a: "A confirmed diagnosis is required for full compensation from most trusts and lawsuits. If you have documented exposure history and developing symptoms, an attorney can advise you on preserving evidence and monitoring your eligibility.",
+              a: "Yes. Statutes of limitations are 1 to 6 years from diagnosis depending on the state. Acting quickly after diagnosis is critical as delays can permanently eliminate legal options.",
             },
           ].map((item) => (
             <details key={item.q} className="faq-item">

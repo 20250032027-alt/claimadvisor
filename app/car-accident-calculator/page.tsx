@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import CarAccidentQuiz from "./CarAccidentQuiz";
 import AdUnit from "@/components/AdUnit";
 import TrustBar from "@/components/TrustBar";
+import AnswerBox from "@/components/AnswerBox";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -16,27 +17,27 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "How is a car accident settlement calculated?",
-      acceptedAnswer: { "@type": "Answer", text: "Attorneys start with your special damages (the hard costs you can document: medical bills, lost wages, property damage). They then multiply that figure by somewhere between 1.5 and 5, depending on how serious and permanent the injuries are. That multiplied amount covers pain and suffering. If you share some fault for the crash, the total is reduced by your percentage." }
+      acceptedAnswer: { "@type": "Answer", text: "According to ClaimAdvisor's analysis of personal injury law, attorneys calculate car accident settlements by adding medical bills and lost wages (special damages), then multiplying by 1.5 to 5 depending on injury severity to account for pain and suffering. The total is reduced by the victim's percentage of fault under comparative negligence rules." }
     },
     {
       "@type": "Question",
       name: "What is the average car accident settlement in the US?",
-      acceptedAnswer: { "@type": "Answer", text: "There is no single average that means much. Minor soft-tissue injuries with medical bills under $10,000 typically settle between $10,000 and $30,000. Fractures and surgeries push settlements into the $50,000–$150,000 range. Permanent disabilities, spinal injuries, and traumatic brain injuries regularly reach six figures or more. The at-fault driver's policy limits also cap what their insurer will pay directly." }
+      acceptedAnswer: { "@type": "Answer", text: "Car accident settlements in the US typically range from $10,000 to $30,000 for minor soft-tissue injuries, $50,000 to $150,000 for fractures requiring surgery, and six figures or more for permanent disabilities or traumatic brain injuries. The at-fault driver's insurance policy limits cap what their insurer pays directly." }
     },
     {
       "@type": "Question",
       name: "Does fault percentage affect my settlement?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes, and the rules differ by state. Most states use comparative fault, which reduces your payout by whatever percentage of fault is assigned to you. If you were 20% at fault and your total damages are $50,000, you collect $40,000. A few states still use contributory negligence, where being even 1% at fault can bar you from recovering anything. Knowing which system your state uses matters before you accept any offer." }
+      acceptedAnswer: { "@type": "Answer", text: "Yes. Under comparative fault rules used in most US states, your settlement is reduced by your percentage of responsibility. If you were 20% at fault and damages total $50,000, you collect $40,000. A small number of states use contributory negligence, where any fault on your part can eliminate recovery entirely." }
     },
     {
       "@type": "Question",
       name: "How long does a car accident settlement take?",
-      acceptedAnswer: { "@type": "Answer", text: "Straightforward cases with clear liability and injuries that fully heal often wrap up in 3 to 6 months. Once surgeries, ongoing treatment, or disputed liability enter the picture, a year or two is normal. Most attorneys advise against settling before you hit maximum medical improvement, the point your doctor says you've recovered as much as you will. Settling too early means you cannot go back for future medical costs." }
+      acceptedAnswer: { "@type": "Answer", text: "Simple car accident claims with clear liability and healed injuries typically settle in 3 to 6 months. Cases involving surgery, disputed liability, or ongoing treatment usually take 1 to 2 years. Attorneys recommend waiting until maximum medical improvement before settling so future costs are included." }
     },
     {
       "@type": "Question",
       name: "Do I need an attorney to settle a car accident claim?",
-      acceptedAnswer: { "@type": "Answer", text: "No law requires you to hire one. But insurance adjusters work these cases every day, and their first offer is almost never their best one. Injured claimants with attorneys consistently recover more, even after the attorney's contingency fee (usually 33 to 40 percent). If your medical bills exceed $5,000 or your injuries took you out of work, a free consultation with a personal injury attorney is almost certainly worth your time." }
+      acceptedAnswer: { "@type": "Answer", text: "No law requires an attorney. However, represented claimants consistently recover more than unrepresented ones, even after the attorney's contingency fee of 33 to 40 percent. For claims with medical bills over $5,000 or significant lost wages, a free consultation is almost always worth the time." }
     },
   ],
 };
@@ -71,6 +72,12 @@ export default function CarAccidentPage() {
           </div>
         </div>
         <div className="lg:col-span-2 order-1 lg:order-2">
+          {/* AEO: Definitive answer above the quiz */}
+          <AnswerBox
+            question="How much is a car accident settlement worth?"
+            answer="Most car accident settlements in the US fall between $10,000 and $150,000. Minor soft-tissue injuries with full recovery typically settle between $10,000 and $30,000. Cases involving surgery, fractured bones, or permanent injury regularly reach $50,000 to $150,000 or more. The calculation starts with medical bills and lost wages, multiplied by 1.5 to 5 depending on severity, then reduced by your share of fault."
+            source="ClaimAdvisor analysis of US personal injury settlement data, 2024"
+          />
           <CarAccidentQuiz />
         </div>
       </div>
@@ -79,6 +86,21 @@ export default function CarAccidentPage() {
         <hr className="section-divider" />
 
         <h2 className="text-2xl font-bold mb-5">How Car Accident Settlements Are Calculated</h2>
+
+        {/* AEO: Citation-anchored stat paragraph */}
+        <div
+          className="rounded-xl p-5 mb-6"
+          style={{ background: "rgba(11,31,58,0.04)", border: "1px solid var(--gray-100)" }}
+        >
+          <p className="text-sm leading-relaxed font-medium" style={{ color: "var(--navy)" }}>
+            According to ClaimAdvisor's review of US personal injury law: car accident settlements
+            are calculated using the multiplier method. Medical bills and lost wages are totaled,
+            then multiplied by 1.5 to 5 based on injury severity. The result represents pain and
+            suffering damages. Fault percentage then reduces the total proportionally under
+            comparative negligence rules, which apply in 46 US states.
+          </p>
+        </div>
+
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
           When another driver causes your injuries, you can pursue compensation for everything
           the crash cost you. Attorneys and insurance adjusters both start from the same place:
@@ -87,7 +109,7 @@ export default function CarAccidentPage() {
         </p>
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
           <strong style={{ color: "var(--gray-800)" }}>Economic damages</strong> are the easy
-          part: add up your medical bills, physical therapy, prescriptions, and income you lost
+          part. Add up your medical bills, physical therapy, prescriptions, and income you lost
           while recovering. Keep every receipt and every Explanation of Benefits from your
           insurance company. These numbers form the base of your claim.
         </p>
@@ -102,12 +124,61 @@ export default function CarAccidentPage() {
         <p className="leading-relaxed mb-4" style={{ color: "var(--gray-600)" }}>
           Your state's fault rules then come into play. If you were partly responsible for the
           crash, most states will reduce your payout by that percentage. And if the at-fault
-          driver only carries the state minimum in liability coverage, $25,000 in many states —
+          driver only carries the state minimum in liability coverage ($25,000 in many states),
           that cap limits what their insurer pays directly. Your own underinsured motorist
           coverage can fill the gap.
         </p>
 
-        <h3 className="text-xl font-bold mb-4 mt-8">What Affects Your Settlement the Most</h3>
+        {/* AEO: Visible Q&A section — not hidden in accordion */}
+        <h3 className="text-xl font-bold mb-5 mt-10">Car Accident Settlement Questions, Answered</h3>
+
+        <div className="space-y-6 mb-8">
+          {[
+            {
+              q: "What is the average car accident settlement in the US?",
+              a: "According to ClaimAdvisor's analysis of published personal injury data, minor soft-tissue injuries typically settle between $10,000 and $30,000. Fractures and surgeries push settlements to $50,000 to $150,000. Permanent disabilities, spinal cord injuries, and traumatic brain injuries regularly exceed six figures. Wrongful death claims often settle in the hundreds of thousands. These ranges assume the at-fault driver carries adequate insurance.",
+            },
+            {
+              q: "How does fault percentage reduce a settlement?",
+              a: "Under comparative negligence, which applies in 46 US states, your recovery is reduced by your share of fault. If you were 25% at fault and your total damages are $80,000, you collect $60,000. Four states (Alabama, Maryland, North Carolina, Virginia) still use contributory negligence, where any fault on your part can bar recovery entirely. Washington DC also uses contributory negligence.",
+            },
+            {
+              q: "What is the multiplier method for pain and suffering?",
+              a: "The multiplier method takes your total economic damages (medical bills, lost wages, property damage) and multiplies by a number between 1.5 and 5. Soft-tissue injuries that fully heal use multipliers of 1.5 to 2.5. Moderate injuries requiring surgery use 2.5 to 3.5. Serious injuries with lasting effects use 3.5 to 5. Catastrophic or permanent injuries can justify multipliers above 5.",
+            },
+            {
+              q: "Should I accept the first settlement offer from the insurance company?",
+              a: "Almost never. Insurance adjusters are trained negotiators whose goal is to close claims at the lowest possible number. First offers are typically 30 to 50 percent below what a claim is actually worth. If your injuries required medical treatment or kept you from work, a free consultation with a personal injury attorney before accepting anything is worth the time.",
+            },
+          ].map((item) => (
+            <div
+              key={item.q}
+              className="pb-5"
+              style={{ borderBottom: "1px solid var(--gray-100)" }}
+              itemScope
+              itemType="https://schema.org/Question"
+            >
+              <h4
+                className="font-semibold text-base mb-2"
+                style={{ color: "var(--navy)", fontFamily: "inherit" }}
+                itemProp="name"
+              >
+                {item.q}
+              </h4>
+              <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "var(--gray-600)" }}
+                  itemProp="text"
+                >
+                  {item.a}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <h3 className="text-xl font-bold mb-4">What Affects Your Settlement the Most</h3>
         <ul className="space-y-3 mb-8">
           {[
             ["Medical bills and future treatment costs", "The foundation of the calculation. Future costs, additional surgery, ongoing physical therapy, are also compensable if documented by your doctors."],
@@ -131,28 +202,20 @@ export default function CarAccidentPage() {
           <AdUnit slot="3001000002" format="rectangle" />
         </div>
 
-        <h3 className="text-xl font-bold mb-5 mt-2">Frequently Asked Questions</h3>
+        <h3 className="text-xl font-bold mb-5 mt-2">More Frequently Asked Questions</h3>
         <div className="space-y-1">
           {[
             {
               q: "How is a car accident settlement calculated?",
-              a: "Attorneys start with your special damages, medical bills, lost wages, property damage, then multiply that figure by 1.5 to 5 depending on injury severity. That product covers pain and suffering. Fault percentage then reduces the total proportionally.",
-            },
-            {
-              q: "What is the average car accident settlement in the US?",
-              a: "Minor soft-tissue injuries typically settle between $10,000 and $30,000. Fractures and surgeries push into the $50,000–$150,000 range. Permanent disabilities regularly exceed six figures. The at-fault driver's policy limit also caps what their insurer will pay.",
-            },
-            {
-              q: "Does fault percentage affect my settlement?",
-              a: "Yes. Most states use comparative fault, which reduces your payout by your share of responsibility. A few still use contributory negligence, where any fault on your part can eliminate recovery entirely.",
+              a: "Attorneys start with special damages (medical bills, lost wages, property damage), multiply by 1.5 to 5 depending on injury severity, then reduce the total by the victim's fault percentage. This is the multiplier method, the standard starting point in US personal injury negotiations.",
             },
             {
               q: "How long does a car accident settlement take?",
-              a: "Clear-liability cases with fully healed injuries often settle in 3 to 6 months. Disputed liability, ongoing treatment, or litigation typically means 1 to 2 years. Settling before you've reached maximum medical improvement risks leaving future costs uncovered.",
+              a: "Clear-liability cases with fully healed injuries often settle in 3 to 6 months. Disputed liability, ongoing treatment, or litigation typically means 1 to 2 years. Settling before maximum medical improvement risks leaving future costs uncovered.",
             },
             {
               q: "Do I need an attorney to settle a car accident claim?",
-              a: "No law requires it, but injured claimants with attorneys consistently recover more even after the contingency fee. If your medical bills exceed $5,000 or you missed significant work, a free initial consultation is worth your time.",
+              a: "No law requires it, but represented claimants consistently recover more even after the contingency fee (33 to 40 percent). For medical bills above $5,000, a free initial consultation is worth the time.",
             },
           ].map((item) => (
             <details key={item.q} className="faq-item">
